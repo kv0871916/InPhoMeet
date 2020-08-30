@@ -9,25 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".VerifyOTPActivity"
+        <activity android:name=".IntroActivity"></activity>
+        <activity
+            android:name=".VerifyOTPActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" >
-
-        </activity>
-
-        <activity android:name=".SendOTPActivity"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity
+            android:name=".SendOTPActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize">
-
-        </activity>
-
-        <activity android:name=".WelcomeActivity"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity
+            android:name=".WelcomeActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize">
-
-        </activity>
-
-        <activity android:name=".MainActivity"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>

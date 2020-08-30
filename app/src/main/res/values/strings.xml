@@ -14,4 +14,5 @@
     <string name="start_exploring">Start Exploring</string>
     <string name="it_s_safe_amp_secure"><![CDATA[It\'s Safe & Secure]]></string>
     <string name="note_resend_works_only_after_ever_60_seconds">NOTE: Resend works only after ever 60 seconds</string>
+    <string name="next">Next</string>
 </resources>
