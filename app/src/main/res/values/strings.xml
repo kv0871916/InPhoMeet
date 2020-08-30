@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">InPhoMeet</string>
+    <string name="otp_verification">OTP VERIFICATION</string>
+    <string name="kindly_enter_your_mobile_number_we_will_sent_you_an_one_time_password">Kindly enter your Mobile number we will sent you an One Time Password</string>
+    <string name="for_eg_91_12345_67890">For Eg: +91-12345 67890</string>
+    <string name="_91">+91-</string>
+    <string name="enter_moblie_number">Enter Moblie Number</string>
+    <string name="_1234567890">1234567890</string>
+    <string name="get_otp">GET OTP</string>
+    <string name="enter_the_otp_sent_to">Enter the OTP sent to</string>
+    <string name="didn_t_receive_the_otp">Didn\'t receive the OTP? </string>
+    <string name="resend_otp">RESEND OTP</string>
+    <string name="verify">Verify</string>
+    <string name="start_exploring">Start Exploring</string>
+    <string name="it_s_safe_amp_secure"><![CDATA[It\'s Safe & Secure]]></string>
+    <string name="note_resend_works_only_after_ever_60_seconds">NOTE: Resend works only after ever 60 seconds</string>
+</resources>

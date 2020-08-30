@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".WelcomeActivity">
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+        <Button
+            android:id="@+id/getotp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:background="@drawable/background_button"
+            android:text="GET SET GO"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            android:textStyle="bold">
+
+        </Button>
+
+    </LinearLayout>
+
+
+</ScrollView>
