@@ -28,22 +28,22 @@ public class IntroActivity extends AppCompatActivity {
         Onboardingitem itemfreepower = new Onboardingitem();
         itemfreepower.setTitle("Free and Powerfull");
         itemfreepower.setDescription("Free platform for all without any ads or limits.");
-        itemfreepower.setImage(R.drawable.paper);
+        itemfreepower.setImage(R.drawable.safesecure);
 
         Onboardingitem itemsafeprivate = new Onboardingitem();
         itemsafeprivate.setTitle("Safe and Private");
         itemsafeprivate.setDescription("Safe and secure with Encypted data which is never disclosed.");
-        itemsafeprivate.setImage(R.drawable.paper1);
+        itemsafeprivate.setImage(R.drawable.dataleak);
 
         Onboardingitem itemslimitrange = new Onboardingitem();
         itemslimitrange.setTitle("Limit Range Share");
         itemslimitrange.setDescription("User can share their location's limited range which can help user to notify about their circle.");
-        itemslimitrange.setImage(R.drawable.paper);
+        itemslimitrange.setImage(R.drawable.loacationshare);
 
         Onboardingitem itemcloudbased = new Onboardingitem();
         itemcloudbased.setTitle("Cloud-based");
         itemcloudbased.setDescription("Your chats are synced and cloud based which will save your data.");
-        itemcloudbased.setImage(R.drawable.paper1);
+        itemcloudbased.setImage(R.drawable.cloudbased);
 
         onboardingitems.add(itemfreepower);
         onboardingitems.add(itemsafeprivate);
