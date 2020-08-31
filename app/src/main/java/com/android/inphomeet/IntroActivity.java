@@ -13,6 +13,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,28 +38,35 @@ public class IntroActivity extends AppCompatActivity {
         onboardingViewPager.setAdapter(onboardingAdapter);
 
         buttonOnboardingAction =findViewById(R.id.buttonOnboardingAction);
-
-        setupOnboardingIndicators();
-        setCurrentOnboardingIndicator(0);
-        onboardingViewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-            @Override
-            public void onPageSelected(int position) {
-                super.onPageSelected(position);
-                setCurrentOnboardingIndicator(position);
-            }
-        });
-
-        buttonOnboardingAction.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(onboardingViewPager.getCurrentItem() + 1 < onboardingAdapter.getItemCount()){
-                    onboardingViewPager.setCurrentItem(onboardingViewPager.getCurrentItem() + 1);
-                }else {
-                    startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-                    finish();
+        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+        if(user !=null) {
+            Intent intent = new Intent(this,HomeActivity.class);
+            startActivity(intent);
+        }else{
+            setupOnboardingIndicators();
+            setCurrentOnboardingIndicator(0);
+            onboardingViewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+                @Override
+                public void onPageSelected(int position) {
+                    super.onPageSelected(position);
+                    setCurrentOnboardingIndicator(position);
                 }
-            }
-        });
+            });
+
+            buttonOnboardingAction.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(onboardingViewPager.getCurrentItem() + 1 < onboardingAdapter.getItemCount()){
+                        onboardingViewPager.setCurrentItem(onboardingViewPager.getCurrentItem() + 1);
+                    }else {
+                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                        finish();
+                    }
+                }
+            });
+        }
+
+
     }
     private void setupOnboardingitems(){
         List<Onboardingitem> onboardingitems =new ArrayList<>();

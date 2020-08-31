@@ -2,7 +2,7 @@
     <string name="app_name">InPhoMeet</string>
     <string name="otp_verification">OTP VERIFICATION</string>
     <string name="kindly_enter_your_mobile_number_we_will_sent_you_an_one_time_password">Kindly enter your Mobile number we will sent you an One Time Password</string>
-    <string name="for_eg_91_12345_67890">For Eg: +91-12345 67890</string>
+    <string name="for_eg_91_12345_67890">For Eg: +91–12345 67890</string>
     <string name="_91">+91-</string>
     <string name="enter_moblie_number">Enter Moblie Number</string>
     <string name="_1234567890">1234567890</string>
@@ -15,4 +15,14 @@
     <string name="it_s_safe_amp_secure"><![CDATA[It\'s Safe & Secure]]></string>
     <string name="note_resend_works_only_after_ever_60_seconds">NOTE: Resend works only after ever 60 seconds</string>
     <string name="next">Next</string>
+    <string name="first_name">First Name</string>
+    <string name="kindly_enter_you_firstname_and_lastname">Kindly enter you Firstname and Lastname</string>
+    <string name="alex">Example : Alex</string>
+    <string name="last_name">Last Name</string>
+    <string name="user_profile">USER PROFILE</string>
+    <string name="example_dev">Example : Dev</string>
+    <string name="done">DONE</string>
+    <string name="email">Email</string>
+    <string name="any_eg_in">any@eg.in</string>
+    <string name="password">Password</string>
 </resources>
