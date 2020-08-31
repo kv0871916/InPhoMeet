@@ -25,7 +25,7 @@ public class OnboardingAdapter  extends  RecyclerView.Adapter<OnboardingAdapter.
     @Override
     public OnboardingViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new OnboardingViewHolder(
-                LayoutInflater.from(parent.getContext()).inflate(R.layout.item_container_onboading, parent,false)
+                LayoutInflater.from(parent.getContext()).inflate(R.layout.item_container_onboading, parent, false)
         );
     }
 
@@ -39,7 +39,7 @@ public class OnboardingAdapter  extends  RecyclerView.Adapter<OnboardingAdapter.
         return onboardingitems.size();
     }
 
-    class OnboardingViewHolder extends RecyclerView.ViewHolder{
+     class OnboardingViewHolder extends RecyclerView.ViewHolder{
         private TextView textTitle;
         private TextView textDescription;
         private ImageView imageOnboarding;

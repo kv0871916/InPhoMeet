@@ -53,8 +53,7 @@ public class IntroActivity extends AppCompatActivity {
         onboardingAdapter =new OnboardingAdapter(onboardingitems);
     }
 }
-//Free and Powerfull  Free platform for all without any ads or limits
-//Safe and Private   Safe and secure with Encypted data which is never disclosed
-//Limit Range Share  User can share their Location's Limited Range which can help user to notify about their circle
-//Cloud-based Your chats are synced and cloud based which will save your data
-//
+////Free and Powerfull  Free platform for all without any ads or limits//
+////Safe and Private   Safe and secure with Encypted data which is never disclosed//
+////Limit Range Share  User can share their Location's Limited Range which can help user to notify about their circle//
+////Cloud-based Your chats are synced and cloud based which will save your data//
