@@ -83,7 +83,7 @@ public class VerifyOTPActivity extends AppCompatActivity {
                                     progressBar.setVisibility(View.GONE);
                                     buttonOTPVerify.setVisibility(View.VISIBLE);
                                     if(task.isSuccessful()){
-                                        Intent intent = new Intent(getApplicationContext(),IntroActivity.class);
+                                        Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
                                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                         startActivity(intent);
                                     }
@@ -95,7 +95,6 @@ public class VerifyOTPActivity extends AppCompatActivity {
                 }
             }
         });
-
         findViewById(R.id.textresendotp).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

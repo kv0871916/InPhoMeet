@@ -38,11 +38,6 @@ public class IntroActivity extends AppCompatActivity {
         onboardingViewPager.setAdapter(onboardingAdapter);
 
         buttonOnboardingAction =findViewById(R.id.buttonOnboardingAction);
-        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
-        if(user !=null) {
-            Intent intent = new Intent(this,HomeActivity.class);
-            startActivity(intent);
-        }else{
             setupOnboardingIndicators();
             setCurrentOnboardingIndicator(0);
             onboardingViewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
@@ -59,12 +54,12 @@ public class IntroActivity extends AppCompatActivity {
                     if(onboardingViewPager.getCurrentItem() + 1 < onboardingAdapter.getItemCount()){
                         onboardingViewPager.setCurrentItem(onboardingViewPager.getCurrentItem() + 1);
                     }else {
-                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                        startActivity(new Intent(getApplicationContext(),WelcomeActivity.class));
                         finish();
                     }
                 }
             });
-        }
+
 
 
     }
