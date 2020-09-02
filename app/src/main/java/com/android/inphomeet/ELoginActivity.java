@@ -53,7 +53,7 @@ public class ELoginActivity extends AppCompatActivity {
 
                 }else if(inputPassword.length() >12 ||inputPassword.length() <6){
                     inputPassword.setError("Characters should be less than 12 and  more than 6");
-                }else{
+                }
                     progressBar.setVisibility(View.VISIBLE);
                     buttonLogin.setVisibility(View.INVISIBLE);
 
@@ -68,11 +68,11 @@ public class ELoginActivity extends AppCompatActivity {
                                 startActivity(new Intent(getApplicationContext(),WelcomeActivity.class));
                             }
                             else {
-                                Toast.makeText(ELoginActivity.this, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ELoginActivity.this, "Error", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
-                }
+
             }
         });
 
