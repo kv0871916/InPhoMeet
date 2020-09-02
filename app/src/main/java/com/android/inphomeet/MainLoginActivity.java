@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainLoginActivity extends AppCompatActivity {
+import com.google.firebase.auth.FirebaseAuth;
 
+public class MainLoginActivity extends AppCompatActivity {
+    FirebaseAuth fAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,6 +18,11 @@ public class MainLoginActivity extends AppCompatActivity {
         final Button btnPhone = findViewById(R.id.btnPhone);
         final Button btnEmail = findViewById(R.id.btnEmail);
         final Button btnGoogle= findViewById(R.id.btnGoogle);
+        fAuth = FirebaseAuth.getInstance();
+        if(fAuth.getCurrentUser() != null) {
+            startActivity(new Intent(getApplicationContext(), WelcomeActivity.class));
+            finish();
+        }
 
         btnPhone.setOnClickListener(new View.OnClickListener() {
             @Override

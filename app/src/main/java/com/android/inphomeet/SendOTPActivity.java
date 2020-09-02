@@ -12,12 +12,14 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.firebase.FirebaseException;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
 public class SendOTPActivity extends AppCompatActivity {
+    FirebaseAuth fAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +30,11 @@ public class SendOTPActivity extends AppCompatActivity {
         final Button buttonOTPSend = findViewById(R.id.buttonOTPSend);
 
         final ProgressBar progressBar =findViewById(R.id.progressBar);
-
+        fAuth = FirebaseAuth.getInstance();
+        if(fAuth.getCurrentUser() != null) {
+            startActivity(new Intent(getApplicationContext(), WelcomeActivity.class));
+            finish();
+        }
         buttonOTPSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

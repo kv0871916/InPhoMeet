@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class IntroActivity extends AppCompatActivity {
-
+ FirebaseAuth fAuth;
     private OnboardingAdapter onboardingAdapter;
     private LinearLayout layoutOnboardingIndicators;
     private MaterialButton buttonOnboardingAction;
@@ -30,7 +30,11 @@ public class IntroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
-
+        fAuth = FirebaseAuth.getInstance();
+        if(fAuth.getCurrentUser() != null) {
+            startActivity(new Intent(getApplicationContext(), WelcomeActivity.class));
+            finish();
+        }
         layoutOnboardingIndicators = findViewById(R.id.layoutOnboadingIndicators);
         setupOnboardingitems();
 

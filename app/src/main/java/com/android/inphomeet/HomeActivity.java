@@ -72,7 +72,7 @@ public class HomeActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.VISIBLE);
                 buttonFLName.setVisibility(View.INVISIBLE);
 
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                //FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 String email = inputnewEmail.getText().toString().trim();
                 String password = inputnewPassword.getText().toString().trim();
 

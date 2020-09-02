@@ -25,6 +25,7 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import java.util.concurrent.TimeUnit;
 
 public class VerifyOTPActivity extends AppCompatActivity {
+    FirebaseAuth fAuth;
 
     private EditText inputCode1,inputCode2,inputCode3,inputCode4,inputCode5,inputCode6;
     private String verificationId;
@@ -50,7 +51,11 @@ public class VerifyOTPActivity extends AppCompatActivity {
         final ProgressBar progressBar=findViewById(R.id.progressBar);
         final Button buttonOTPVerify= findViewById(R.id.buttonOTPVerify);
         verificationId = getIntent().getStringExtra("verificationId");
-
+        fAuth = FirebaseAuth.getInstance();
+        if(fAuth.getCurrentUser() != null) {
+            startActivity(new Intent(getApplicationContext(), WelcomeActivity.class));
+            finish();
+        }
         buttonOTPVerify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
