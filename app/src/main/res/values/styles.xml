@@ -12,7 +12,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
     <style name ="Splash" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowBackground">true</item>
+        <item name="android:windowBackground">@color/colorWhite</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>
         <item name="android:windowFullscreen">true</item>
