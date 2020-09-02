@@ -9,17 +9,17 @@
     tools:context=".SplashActivity">
     <ImageView
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="200dp"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
         android:contentDescription="@string/app_name"
         android:src="@drawable/logotr"/>
 
 
 <com.airbnb.lottie.LottieAnimationView
-    android:layout_width="100dp"
+    android:layout_width="150dp"
     android:layout_gravity="center_horizontal"
-    android:layout_height="100dp"
+    android:layout_height="150dp"
     app:lottie_loop="true"
     app:lottie_autoPlay="true"
     app:lottie_rawRes="@raw/loading">

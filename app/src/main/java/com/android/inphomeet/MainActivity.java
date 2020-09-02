@@ -17,15 +17,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(fAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), WelcomeActivity.class));
-            finish();
-        }
+
         btnex = (Button) findViewById(R.id.Explore);
         btnex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 welcome();
+                if(fAuth.getCurrentUser() != null) {
+                    startActivity(new Intent(getApplicationContext(), WelcomeActivity.class));
+                    finish();
+                }
 
             }
         });
