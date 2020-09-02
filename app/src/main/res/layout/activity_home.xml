@@ -15,7 +15,7 @@
     <ImageView
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:contentDescription="@string/app_name"
         android:src="@drawable/paper">
 
@@ -23,12 +23,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/user_profile"
+            android:text="@string/new_account"
             android:textSize="20sp"
             android:textColor="@color/colorTextPrimary"
             android:textStyle="bold">
-
         </TextView>
 
         <TextView
@@ -38,7 +36,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="50dp"
             android:gravity="center"
-            android:text="@string/kindly_enter_you_firstname_and_lastname"
+            android:text="@string/kindly_enter_your_details"
             android:textColor="@color/colorTextSecondary"
             android:textSize="14sp">
 
@@ -64,7 +62,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
                 android:gravity="center"
-                android:text="@string/first_name"
+                android:text="@string/full_name"
                 android:textColor="@color/colorTextSecondary"
                 android:textSize="14sp">
 
@@ -108,7 +106,7 @@
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
                 android:gravity="center"
-                android:text="@string/last_name"
+                android:text="@string/phone"
                 android:textColor="@color/colorTextSecondary"
                 android:textSize="14sp">
 
@@ -116,12 +114,12 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:background="@null"
-                android:id="@+id/inputLname"
-                android:hint="@string/example_dev"
+                android:id="@+id/inputMobile"
+                android:hint="@string/_12345_67890"
                 android:layout_height="30dp"
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
-                android:inputType="text"
+                android:inputType="number"
                 android:textColor="@color/colorTextPrimary"
                 android:textSize="16sp"
                 android:textStyle="bold">
@@ -137,99 +135,99 @@
                 />
         </LinearLayout>
     </LinearLayout>
-<!--       <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="100dp"-->
-<!--            android:gravity="center_horizontal"-->
-<!--            android:orientation="horizontal">-->
+       <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
 
-<!--            <LinearLayout-->
-<!--                android:layout_width="130dp"-->
-<!--                android:layout_height="130dp"-->
-<!--                android:layout_marginStart="60dp"-->
-<!--                android:layout_marginEnd="40dp"-->
-<!--                android:gravity="center"-->
-<!--                android:orientation="vertical"-->
-<!--                android:layout_marginLeft="60dp"-->
-<!--                android:layout_marginRight="40dp">-->
-<!--                <TextView-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="30dp"-->
-<!--                    android:layout_marginEnd="30dp"-->
-<!--                    android:gravity="center"-->
-<!--                    android:text="@string/email"-->
-<!--                    android:textColor="@color/colorTextSecondary"-->
-<!--                    android:textSize="14sp">-->
+            <LinearLayout
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="40dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="40dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:gravity="center"
+                    android:text="@string/email"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="14sp">
 
-<!--                </TextView>-->
-<!--                <EditText-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:background="@null"-->
-<!--                    android:id="@+id/inputnewEmail"-->
-<!--                    android:hint="@string/any_eg_in"-->
-<!--                    android:layout_height="30dp"-->
-<!--                    android:imeOptions="actionDone"-->
-<!--                    android:importantForAutofill="no"-->
-<!--                    android:inputType="textEmailAddress"-->
-<!--                    android:textColor="@color/colorTextPrimary"-->
-<!--                    android:textSize="16sp"-->
-<!--                    android:textStyle="bold">-->
+                </TextView>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:background="@null"
+                    android:id="@+id/inputnewEmail"
+                    android:hint="@string/any_eg_in"
+                    android:layout_height="30dp"
+                    android:imeOptions="actionDone"
+                    android:importantForAutofill="no"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="16sp"
+                    android:textStyle="bold">
 
-<!--                </EditText>-->
-<!--                <ProgressBar-->
-<!--                    -->
-<!--                    style="?android:attr/progressBarStyleHorizontal"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="3dp"-->
-<!--                    android:progress="100"-->
-<!--                    android:progressDrawable="@color/colorDivider"-->
-<!--                    />-->
-<!--            </LinearLayout>-->
+                </EditText>
+                <ProgressBar
 
-<!--            <LinearLayout-->
-<!--                android:layout_width="130dp"-->
-<!--                android:layout_height="130dp"-->
-<!--                android:layout_marginStart="40dp"-->
-<!--                android:layout_marginEnd="60dp"-->
-<!--                android:gravity="center"-->
-<!--                android:orientation="vertical"-->
-<!--                android:layout_marginLeft="40dp"-->
-<!--                android:layout_marginRight="60dp">-->
-<!--                <TextView-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginStart="30dp"-->
-<!--                    android:layout_marginEnd="30dp"-->
-<!--                    android:gravity="center"-->
-<!--                    android:text="@string/password"-->
-<!--                    android:textColor="@color/colorTextSecondary"-->
-<!--                    android:textSize="14sp">-->
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:progress="100"
+                    android:progressDrawable="@color/colorDivider"
+                    />
+            </LinearLayout>
 
-<!--                </TextView>-->
-<!--                <EditText-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:background="@null"-->
-<!--                    android:id="@+id/inputnewPassword"-->
-<!--                    android:hint="Min:6 Max:8"-->
-<!--                    android:layout_height="30dp"-->
-<!--                    android:imeOptions="actionDone"-->
-<!--                    android:importantForAutofill="no"-->
-<!--                    android:inputType="textPassword"-->
-<!--                    android:textColor="@color/colorTextPrimary"-->
-<!--                    android:textSize="16sp"-->
-<!--                    android:textStyle="bold">-->
+            <LinearLayout
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="60dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="60dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:gravity="center"
+                    android:text="@string/password"
+                    android:textColor="@color/colorTextSecondary"
+                    android:textSize="14sp">
 
-<!--                </EditText>-->
-<!--                <ProgressBar-->
-<!--                    style="?android:attr/progressBarStyleHorizontal"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="3dp"-->
-<!--                    android:progress="100"-->
-<!--                    android:progressDrawable="@color/colorDivider"-->
-<!--                    />-->
-<!--            </LinearLayout>-->
-<!--        </LinearLayout>-->
+                </TextView>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:background="@null"
+                    android:id="@+id/inputnewPassword"
+                    android:hint="Min:6 Max:8"
+                    android:layout_height="30dp"
+                    android:imeOptions="actionDone"
+                    android:importantForAutofill="no"
+                    android:inputType="textPassword"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="16sp"
+                    android:textStyle="bold">
+
+                </EditText>
+                <ProgressBar
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:progress="100"
+                    android:progressDrawable="@color/colorDivider"
+                    />
+            </LinearLayout>
+        </LinearLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -253,5 +251,18 @@
                 android:visibility="gone">
             </ProgressBar>
         </FrameLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="50dp"
+            android:gravity="center"
+            android:id="@+id/loginhere"
+            android:text="@string/already_have_an_account_login_here"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="14sp">
+
+        </TextView>
 </LinearLayout>
 </ScrollView>

@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     private void welcome(){
-        Intent intent = new Intent(this,SendOTPActivity.class);
+        Intent intent = new Intent(this,MainLoginActivity.class);
         startActivity(intent);
     }
 }
