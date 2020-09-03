@@ -10,29 +10,30 @@ import android.widget.Button;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
-    private Button btnex;
-    FirebaseAuth fAuth;
+
+ //   FirebaseAuth fAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        final Button btnex;
 
-
-        btnex = (Button) findViewById(R.id.Explore);
+        btnex = findViewById(R.id.Explore);
         btnex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 welcome();
-                if(fAuth.getCurrentUser() != null) {
-                    startActivity(new Intent(getApplicationContext(), WelcomeActivity.class));
-                    finish();
-                }
-
             }
         });
     }
     private void welcome(){
-        Intent intent = new Intent(this,MainLoginActivity.class);
-        startActivity(intent);
+//        if(fAuth.getCurrentUser() != null) {
+//            startActivity(new Intent(getApplicationContext(), WelcomeActivity.class));
+//            finish();
+//        }
+      //  else {
+            Intent intent = new Intent(this, MainLoginActivity.class);
+            startActivity(intent);
+       // }
     }
 }
