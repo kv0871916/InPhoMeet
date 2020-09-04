@@ -34,7 +34,7 @@ public class MainLoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_login);
         final Button btnPhone = findViewById(R.id.btnPhone);
-        final Button btnEmail = findViewById(R.id.btnEmail);
+        //final Button btnEmail = findViewById(R.id.btnEmail);
         final Button btnGoogle= findViewById(R.id.btnGoogle);
         fAuth = FirebaseAuth.getInstance();
 
@@ -50,13 +50,13 @@ public class MainLoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        btnEmail.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),ELoginActivity.class);
-                startActivity(intent);
-            }
-        });
+//        btnEmail.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(getApplicationContext(),ELoginActivity.class);
+//                startActivity(intent);
+//            }
+//        });
         btnGoogle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

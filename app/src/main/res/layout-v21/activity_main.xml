@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mainbg"
+    android:background="@color/colorWhite"
     tools:context=".MainActivity"
     android:orientation="vertical">
 
@@ -17,8 +17,8 @@
         android:text="@string/app_name"
         android:textAlignment="center"
         android:textAllCaps="true"
-        android:textColor="#000000"
-        android:textSize="27dp"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="30sp"
         app:fontFamily="@font/alfa_slab_one"
         tools:ignore="MissingConstraints" />
 
@@ -37,11 +37,11 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="404dp"
+        android:layout_height="420dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
-        android:src="@drawable/logo1w"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/white_crystal"
         tools:ignore="MissingConstraints" />
 
     <Button

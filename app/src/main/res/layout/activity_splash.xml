@@ -6,6 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorWhite"
     tools:context=".SplashActivity">
     <ImageView
         android:layout_gravity="center_horizontal"
@@ -13,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/logotr"/>
+        android:src="@drawable/white_crystal"/>
 
 
 <com.airbnb.lottie.LottieAnimationView
