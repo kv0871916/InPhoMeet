@@ -48,4 +48,6 @@
     <string name="login_in">LOGIN IN</string>
     <string name="don_t_have_an_account">Don\'t have an Account?</string>
     <string name="create_one">Create one</string>
+    <string name="send_message">Send Message</string>
+    <string name="messages_will_be_displayed">Messages will be displayed</string>
 </resources>

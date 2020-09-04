@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChatScreenActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="682dp"
+        android:id="@+id/displaymessage"
+        android:padding="10dp"
+        android:layout_above="@+id/sendtext"
+        android:layout_marginBottom="4dp"
+        android:hint="@string/messages_will_be_displayed"
+
+        android:textAlignment="gravity">
+    </TextView>
+
+    <EditText
+        android:id="@+id/sendtext"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_toStartOf="@+id/buttonMessageSend"
+        android:layout_toLeftOf="@+id/buttonMessageSend"
+        android:ems="10"
+        android:hint="@string/send_message"
+        android:inputType="text"
+        android:autofillHints="@string/send_message">
+
+    </EditText>
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/buttonMessageSend"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/ic_baseline_send_24"
+        android:onClick="sendMessage">
+    </Button>
+</RelativeLayout>
