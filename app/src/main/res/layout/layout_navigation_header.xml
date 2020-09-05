@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="20dp">
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/ProfilePhoto"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_oval="true">
+    </com.makeramen.roundedimageview.RoundedImageView>
+    <View
+        android:id="@+id/viewSupporter"
+        app:layout_constraintBottom_toBottomOf="@id/ProfilePhoto"
+        app:layout_constraintEnd_toEndOf="@id/ProfilePhoto"
+        app:layout_constraintStart_toStartOf="@id/ProfilePhoto"
+        app:layout_constraintTop_toTopOf="@id/ProfilePhoto"
+        android:layout_width="1dp"
+        android:layout_height="1dp">
+    </View>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/UserInfo"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/viewSupporter"
+        app:layout_constraintStart_toEndOf="@id/ProfilePhoto">
+    </TextView>
+</androidx.constraintlayout.widget.ConstraintLayout>

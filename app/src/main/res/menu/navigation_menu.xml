@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menuGroup"
+        android:icon="@drawable/ic_group"
+        android:title="@string/new_group">
+    </item>
+    <item android:id="@+id/menuContacts"
+        android:icon="@drawable/ic_contacts"
+        android:title="@string/contacts">
+    </item>
+    <item android:id="@+id/menuSettings"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/settings">
+    </item>
+
+    <item android:title="@string/others"
+        android:icon="@drawable/ic_more">
+        <menu>
+            <item android:id="@+id/menuAbout"
+                android:icon="@drawable/ic_info"
+                android:title="@string/about">
+            </item>
+            <item android:id="@+id/menuInvite"
+                android:icon="@drawable/ic_share"
+                android:title="@string/invite">
+            </item>
+            <item android:id="@+id/menuFAQ"
+                android:icon="@drawable/ic_message"
+                android:title="@string/faq_s">
+            </item>
+
+        </menu>
+    </item>
+
+
+</menu>

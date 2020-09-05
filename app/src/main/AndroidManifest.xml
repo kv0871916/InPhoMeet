@@ -13,11 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
-        <activity android:name=".ChatScreenActivity"
+        <activity android:name=".MainChatsActivity"></activity>
+        <activity
+            android:name=".ChatScreenActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"
-            android:theme="@style/AppTheme1">
-        </activity>
+            android:theme="@style/AppTheme1"
+            android:windowSoftInputMode="adjustResize"></activity>
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait"
@@ -32,8 +33,7 @@
         <activity
             android:name=".ELoginActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize">
-        </activity>
+            android:windowSoftInputMode="adjustResize"></activity>
         <activity
             android:name=".MainLoginActivity"
             android:screenOrientation="portrait"
@@ -61,7 +61,7 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"></activity>
+            android:windowSoftInputMode="adjustResize" />
 
         <meta-data
             android:name="preloaded_fonts"
