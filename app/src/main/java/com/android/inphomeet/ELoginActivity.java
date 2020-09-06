@@ -84,17 +84,20 @@ public class ELoginActivity extends AppCompatActivity {
                                         Pair[] pairs = new Pair[1];
 
                                         pairs[0] = new Pair<View,String>(findViewById(R.id.buttonLogin),"SIGN IN");
-                                        ActivityOptions options = null;
+
                                         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-                                            Toast.makeText(ELoginActivity.this, "Welcome"+ username +"to InPhoMeet", Toast.LENGTH_SHORT).show();
-                                            options = ActivityOptions.makeSceneTransitionAnimation(ELoginActivity.this,pairs);
+                                            Toast.makeText(ELoginActivity.this, "Welcome"+ username.trim() +"to InPhoMeet", Toast.LENGTH_SHORT).show();
+                                            ActivityOptions options  = ActivityOptions.makeSceneTransitionAnimation(ELoginActivity.this,pairs);
                                             startActivity(intent,options.toBundle());
                                         }
                                         else{
-                                            Toast.makeText(ELoginActivity.this, "Welcome"+ username +"to InPhoMeet", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(ELoginActivity.this, "Welcome"+ username.trim() +"to InPhoMeet", Toast.LENGTH_SHORT).show();
                                             startActivity(intent);
                                         }
 
+                                    }
+                                    else{
+                                        Toast.makeText(ELoginActivity.this, "hey please enter correct data", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             }

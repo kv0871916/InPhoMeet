@@ -9,6 +9,7 @@
         android:layout_height="70dp"
         android:id="@+id/ProfilePhoto"
         android:scaleType="centerCrop"
+        android:src="@drawable/ic_white_account_circle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:riv_oval="true">
