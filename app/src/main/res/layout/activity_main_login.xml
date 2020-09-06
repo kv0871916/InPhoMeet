@@ -18,7 +18,7 @@
             android:layout_height="200dp"
             android:layout_marginTop="60dp"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/purple_crystal">
+            android:src="@drawable/white_crystal">
         </ImageView>
         <com.airbnb.lottie.LottieAnimationView
             android:layout_width="100dp"
@@ -29,27 +29,32 @@
             app:lottie_autoPlay="true"
             app:lottie_rawRes="@raw/blue_boxloding">
         </com.airbnb.lottie.LottieAnimationView>
-        <TextView
 
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
+            android:fontFamily="@font/autour_one"
             android:text="@string/sign_in"
-            android:textSize="30sp"
             android:textColor="@color/colorPrimary"
+            android:textSize="30sp"
             android:textStyle="bold">
 
         </TextView>
     <Button
         android:id="@+id/btnPhone"
         android:layout_margin="30dp"
-        android:background="@drawable/mainbg"
+        android:fontFamily="@font/autour_one"
+        android:background="@drawable/background_button"
+        android:padding="5dp"
         android:drawableLeft="@drawable/ic_contact_phone_white"
         android:textStyle="bold"
         android:textSize="16sp"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="@string/login_with_phone" />
+        android:textColor="@color/colorWhite"
+        android:text="@string/login_with_phone"
+        android:drawableStart="@drawable/ic_contact_phone_white" />
 
 <!--        <Button-->
 <!--            android:id="@+id/btnEmail"-->
@@ -64,14 +69,18 @@
         <Button
             android:id="@+id/btnGoogle"
             android:layout_margin="30dp"
-            android:background="@drawable/mainbg"
+            android:fontFamily="@font/autour_one"
+            android:background="@drawable/background_button"
             android:drawableLeft="@drawable/ic_white_account_circle"
             android:textStyle="bold"
+            android:padding="5dp"
             android:textSize="16sp"
             android:layout_width="300dp"
             android:layout_marginBottom="50dp"
+            android:textColor="@color/colorWhite"
             android:layout_height="wrap_content"
-            android:text="@string/login_with_google" />
+            android:text="@string/login_with_google"
+            android:drawableStart="@drawable/ic_white_account_circle" />
 
     </LinearLayout>
 </ScrollView>

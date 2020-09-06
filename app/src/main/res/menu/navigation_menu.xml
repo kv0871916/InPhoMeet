@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/menuGroup"
-        android:icon="@drawable/ic_group"
-        android:title="@string/new_group">
+    <item android:id="@+id/menuHome"
+        android:icon="@drawable/ic_home_chat"
+        android:title="@string/home">
     </item>
+    <item android:id="@+id/menuGroup"
+    android:icon="@drawable/ic_group"
+    android:title="@string/new_group">
+</item>
+
     <item android:id="@+id/menuContacts"
         android:icon="@drawable/ic_contacts"
         android:title="@string/contacts">

@@ -6,6 +6,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:padding="10dp"
     tools:context=".ELoginActivity">
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +17,6 @@
     <ImageView
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:layout_marginTop="20dp"
         android:contentDescription="@string/app_name"
         android:src="@drawable/paper">
 
@@ -24,7 +25,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login_in"
-        android:textSize="20sp"
+        android:textSize="30sp"
+        android:fontFamily="@font/autour_one"
         android:textColor="@color/colorTextPrimary"
         android:textStyle="bold">
     </TextView>
@@ -33,8 +35,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="2dp"
         android:layout_marginEnd="50dp"
+        android:fontFamily="@font/autour_one"
+        android:layout_marginBottom="10dp"
         android:gravity="center"
         android:text="@string/kindly_enter_your_details"
         android:textColor="@color/colorTextSecondary"
@@ -44,95 +48,67 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginEnd="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical"
-            android:layout_marginLeft="60dp"
-            android:layout_marginRight="40dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp"
-                android:gravity="center"
-                android:text="@string/email"
-                android:textColor="@color/colorTextSecondary"
-                android:textSize="14sp">
+            tools:ignore="UselessParent">
 
-            </TextView>
-            <EditText
-                android:layout_width="wrap_content"
-                android:background="@null"
-                android:id="@+id/inputEmail"
-                android:hint="@string/any_eg_in"
-                android:layout_height="30dp"
-                android:imeOptions="actionDone"
-                android:importantForAutofill="no"
-                android:inputType="textEmailAddress"
-                android:textColor="@color/colorTextPrimary"
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:id="@+id/inputUsername"
+                android:hint="@string/enterusername"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/autour_one"
+                android:inputType="text"
+                android:textColorHint="@color/colorTextPrimary"
                 android:textSize="16sp"
-                android:textStyle="bold">
+                android:textStyle="bold"
+                android:drawableTint="@color/colorTextPrimary"
+                android:drawableLeft="@drawable/ic_white_account_circle"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:drawableStart="@drawable/ic_white_account_circle"
+                tools:targetApi="m"
+                app:boxStrokeColor="@color/colorTextPrimary"
+                app:boxStrokeWidthFocused="2dp"
+                android:drawablePadding="10dp"
+                app:endIconMode="clear_text">
 
-            </EditText>
-            <ProgressBar
+            </com.google.android.material.textfield.TextInputEditText>
 
-                style="?android:attr/progressBarStyleHorizontal"
+
+
+
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:progress="100"
-                android:progressDrawable="@color/colorDivider"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="60dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="60dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp"
-                android:gravity="center"
-                android:text="@string/password"
-                android:textColor="@color/colorTextSecondary"
-                android:textSize="14sp">
-
-            </TextView>
-            <EditText
-                android:layout_width="wrap_content"
                 android:background="@null"
                 android:id="@+id/inputPassword"
-                android:hint="Min:6 Max:12"
-                android:layout_height="30dp"
+                android:hint="@string/password"
+                android:fontFamily="@font/autour_one"
+                android:layout_height="wrap_content"
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
                 android:inputType="textPassword"
-                android:textColor="@color/colorTextPrimary"
+                android:textColorHint="@color/colorTextPrimary"
                 android:textSize="16sp"
-                android:textStyle="bold">
+                app:boxStrokeColor="@color/colorTextPrimary"
+                app:boxStrokeWidthFocused="2dp"
+                android:drawableTint="@color/colorTextPrimary"
+                android:drawableStart="@drawable/ic_password"
+                android:textStyle="bold"
+                android:drawablePadding="10dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:drawableLeft="@drawable/ic_password"
+                tools:targetApi="m">
 
-            </EditText>
-            <ProgressBar
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent"
-                android:layout_height="3dp"
-                android:progress="100"
-                android:progressDrawable="@color/colorDivider"
-                />
+            </com.google.android.material.textfield.TextInputEditText>
+
         </LinearLayout>
     </LinearLayout>
 
@@ -143,12 +119,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
+            android:fontFamily="@font/autour_one"
             android:background="@drawable/background_button"
             android:textStyle="bold"
             android:textSize="16sp"
+            android:transitionName="@string/sign_in"
             android:text="@string/sign_in"
             android:id="@+id/buttonLogin"
-            android:textColor="@color/colorWhite">
+            android:textColor="@color/colorWhite"
+            tools:ignore="UnusedAttribute">
         </Button>
         <ProgressBar
             android:layout_width="40dp"
@@ -167,6 +146,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:fontFamily="@font/autour_one"
         android:text="@string/don_t_have_an_account"
         android:textColor="@color/colorTextSecondary"
         android:textSize="14sp">
@@ -178,6 +158,7 @@
             android:text="@string/create_one"
             android:textColor="@color/colorAccent"
             android:layout_marginLeft="8dp"
+            android:fontFamily="@font/autour_one"
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginStart="8dp">

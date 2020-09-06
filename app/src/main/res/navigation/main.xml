@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/menuHome">
+    <fragment
+        android:id="@+id/menuHome"
+        android:name="com.android.inphomeet.HomeChatFragment"
+        android:label="homeChat"
+        tools:layout="@layout/fragment_home_chat" />
+    <fragment
+        android:id="@+id/menuContacts"
+        android:name="com.android.inphomeet.ContactsFragment"
+        android:label="Contacts"
+        tools:layout="@layout/fragment_contacts" />
+    <fragment
+        android:id="@+id/menuGroup"
+        android:name="com.android.inphomeet.NewGroupFragment"
+        android:label="NewGroup"
+        tools:layout="@layout/fragment_new_group" />
+    <fragment
+        android:id="@+id/menuSettings"
+        android:name="com.android.inphomeet.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/menuAbout"
+        android:name="com.android.inphomeet.AboutFragment"
+        android:label="About"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/menuFAQ"
+        android:name="com.android.inphomeet.FAQFragment"
+        android:label="FAQ"
+        tools:layout="@layout/fragment_f_a_q" />
+    <fragment
+        android:id="@+id/menuInvite"
+        android:name="com.android.inphomeet.InviteFragment"
+        android:label=" Invite"
+        tools:layout="@layout/fragment_invite" />
+
+</navigation>

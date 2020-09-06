@@ -58,7 +58,7 @@ public class IntroActivity extends AppCompatActivity {
                     if(onboardingViewPager.getCurrentItem() + 1 < onboardingAdapter.getItemCount()){
                         onboardingViewPager.setCurrentItem(onboardingViewPager.getCurrentItem() + 1);
                     }else {
-                        startActivity(new Intent(getApplicationContext(),WelcomeActivity.class));
+                        startActivity(new Intent(getApplicationContext(),MainChatsActivity.class));
                         finish();
                     }
                 }

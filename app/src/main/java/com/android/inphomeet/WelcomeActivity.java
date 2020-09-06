@@ -36,10 +36,9 @@ public class WelcomeActivity extends AppCompatActivity {
 
     }
     private void chat() {
-        startActivity(new Intent(getApplicationContext(),ChatScreenActivity.class));
-        Toast.makeText(this, "User is Logged out", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(getApplicationContext(),MainChatsActivity.class));
+        Toast.makeText(this, "Welcome to our app", Toast.LENGTH_SHORT).show();
     }
-
     private void votp() {
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(getApplicationContext(),MainLoginActivity.class));

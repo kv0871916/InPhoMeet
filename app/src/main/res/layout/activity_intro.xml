@@ -5,7 +5,9 @@
     android:background="@color/colorWhite"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IntroActivity">
+    android:transitionName="@string/sign_in"
+    tools:context=".IntroActivity"
+    tools:targetApi="lollipop">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonOnboardingAction"

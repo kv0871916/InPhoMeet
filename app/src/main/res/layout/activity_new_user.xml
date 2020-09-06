@@ -6,15 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".HomeActivity">
+    tools:context=".NewUserActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="vertical">
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginTop="20dp"
         android:contentDescription="@string/app_name"
         android:src="@drawable/paper">
@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/new_account"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:textColor="@color/colorTextPrimary"
             android:textStyle="bold">
         </TextView>
@@ -59,12 +59,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:gravity="center"
                 android:text="@string/full_name"
-                android:textColor="@color/colorTextSecondary"
-                android:textSize="14sp">
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp">
 
             </TextView>
         <EditText
@@ -103,12 +103,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="16sp"
                 android:gravity="center"
                 android:text="@string/phone"
-                android:textColor="@color/colorTextSecondary"
-                android:textSize="14sp">
+                android:textColor="@color/colorTextPrimary"
+                >
 
             </TextView>
             <EditText
@@ -153,23 +154,24 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:textSize="16sp"
                     android:gravity="center"
-                    android:text="@string/email"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="14sp">
+                    android:text="@string/username"
+                    android:textColor="@color/colorTextPrimary"
+                    >
 
                 </TextView>
                 <EditText
                     android:layout_width="wrap_content"
                     android:background="@null"
-                    android:id="@+id/inputnewEmail"
-                    android:hint="@string/any_eg_in"
+                    android:id="@+id/inputnewUsername"
+                    android:hint="@string/alex1234"
                     android:layout_height="30dp"
                     android:imeOptions="actionDone"
                     android:importantForAutofill="no"
-                    android:inputType="textEmailAddress"
+                    android:inputType="text"
                     android:textColor="@color/colorTextPrimary"
                     android:textSize="16sp"
                     android:textStyle="bold">
@@ -197,19 +199,20 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:textSize="16sp"
                     android:gravity="center"
                     android:text="@string/password"
-                    android:textColor="@color/colorTextSecondary"
-                    android:textSize="14sp">
+                    android:textColor="@color/colorTextPrimary"
+                    >
 
                 </TextView>
                 <EditText
                     android:layout_width="wrap_content"
                     android:background="@null"
                     android:id="@+id/inputnewPassword"
-                    android:hint="Min:6 Max:8"
+                    android:hint="@string/min_6_max_12"
                     android:layout_height="30dp"
                     android:imeOptions="actionDone"
                     android:importantForAutofill="no"
@@ -227,6 +230,156 @@
                     android:progressDrawable="@color/colorDivider"
                     />
             </LinearLayout>
+
+        </LinearLayout>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal">
+            <RadioButton
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:id="@+id/male"
+                android:text="@string/male"
+                android:textSize="16sp"
+                />
+            <RadioButton
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:id="@+id/female"
+                android:text="@string/female"
+                android:textSize="16sp"
+                />
+            <RadioButton
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:id="@+id/other"
+                android:text="@string/other_s"
+                android:textSize="16sp"
+                />
+        </RadioGroup>
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:id="@+id/inputCode1"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor">
+            </EditText>
+            <EditText
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:id="@+id/inputCode2"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor">
+            </EditText>
+            <EditText
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:id="@+id/inputCode3"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor">
+            </EditText>
+            <EditText
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:id="@+id/inputCode4"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor">
+            </EditText>
+            <EditText
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:id="@+id/inputCode5"
+                android:gravity="center"
+                android:imeOptions="actionNext"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor">
+            </EditText>
+            <EditText
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:id="@+id/inputCode6"
+                android:gravity="center"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:maxLength="1"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:ignore="LabelFor">
+            </EditText>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/didn_t_receive_the_otp"
+                android:textSize="14sp">
+            </TextView>
+            <TextView
+                android:id="@+id/textresendotp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/resend_otp"
+                android:textColor="@color/colorAccent"
+                android:layout_marginLeft="8dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginStart="8dp">
+            </TextView>
         </LinearLayout>
 
         <FrameLayout
@@ -235,12 +388,24 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="30dp"
+                android:layout_margin="10dp"
                 android:background="@drawable/background_button"
                 android:textStyle="bold"
                 android:textSize="16sp"
                 android:text="@string/done"
                 android:id="@+id/buttonFLName"
+                android:textColor="@color/colorWhite">
+            </Button>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:background="@drawable/background_button"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:visibility="gone"
+                android:text="@string/verify"
+                android:id="@+id/buttonOTPVerify"
                 android:textColor="@color/colorWhite">
             </Button>
             <ProgressBar
@@ -255,14 +420,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="50dp"
             android:gravity="center"
             android:id="@+id/loginhere"
             android:text="@string/already_have_an_account_login_here"
             android:textColor="@color/colorTextSecondary"
             android:textSize="14sp">
-
         </TextView>
+
 </LinearLayout>
 </ScrollView>

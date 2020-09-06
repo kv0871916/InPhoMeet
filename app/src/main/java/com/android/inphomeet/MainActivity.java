@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final Button btnex;
-
         btnex = findViewById(R.id.Explore);
         btnex.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,13 +26,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     private void welcome(){
-//        if(fAuth.getCurrentUser() != null) {
-//            startActivity(new Intent(getApplicationContext(), WelcomeActivity.class));
-//            finish();
-//        }
-      //  else {
-            Intent intent = new Intent(this, MainLoginActivity.class);
+            Intent intent = new Intent(this, NewUserActivity.class);
             startActivity(intent);
-       // }
     }
 }

@@ -32,4 +32,15 @@
         app:layout_constraintBottom_toTopOf="@id/viewSupporter"
         app:layout_constraintStart_toEndOf="@id/ProfilePhoto">
     </TextView>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:id="@+id/isVerified"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/lightGreen"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/ProfilePhoto"
+        app:layout_constraintTop_toBottomOf="@id/viewSupporter">
+    </TextView>
 </androidx.constraintlayout.widget.ConstraintLayout>
