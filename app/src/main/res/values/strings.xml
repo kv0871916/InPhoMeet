@@ -71,4 +71,5 @@
     <string name="min_6_max_12">Min:6 Max:12</string>
     <string name="enter_onetimepassword">Enter OneTimePassword</string>
     <string name="enterusername">Enter Username</string>
+    <string name="enter_number">Enter Number</string>
 </resources>

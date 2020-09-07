@@ -34,7 +34,7 @@ public class ELoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_elogin);
         fAuth = FirebaseAuth.getInstance();
         final TextView CreateAccount = findViewById(R.id.CreateAccount);
-        final EditText inputUsername = findViewById(R.id.inputUsername);
+        final EditText inputPhoneNumber = findViewById(R.id.inputPhoneNumber);
         final EditText inputPassword = findViewById(R.id.inputPassword );
         final Button buttonLogin = findViewById(R.id.buttonLogin);
         final ProgressBar progressBar =findViewById(R.id.pro1);
@@ -59,8 +59,8 @@ public class ELoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (inputUsername.getText().toString().trim().isEmpty() || inputPassword.getText().toString().trim().isEmpty()) {
-                    inputUsername.setError(" Enter Correct Username ");
+                if (inputPhoneNumber.getText().toString().trim().isEmpty() || inputPassword.getText().toString().trim().isEmpty()) {
+                    inputPhoneNumber.setError(" Enter Correct Mobile Number");
                     inputPassword.setError(" Enter Correct Password ");
 
                 } else if (inputPassword.length() > 12 || inputPassword.length() < 6) {
@@ -69,29 +69,31 @@ public class ELoginActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.VISIBLE);
                 buttonLogin.setVisibility(View.INVISIBLE);
 
-                final String username = inputUsername.getText().toString();
+                final String number = inputPhoneNumber.getText().toString();
                 final String pass = inputPassword.getText().toString();
 
-                databaseReference.child(username)
+                databaseReference.child("PhoneNumber")
                         .addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 if (snapshot.exists()) {
                                     String password = snapshot.child("Password")
                                             .getValue(String.class);
-                                    if (password.equals(pass)) {
+                                    String PhoneNumber = snapshot.child("PhoneNumber")
+                                            .getValue(String.class);
+                                    if (password.equals(pass)||PhoneNumber.equals(number)) {
                                         Intent intent =new Intent(ELoginActivity.this,IntroActivity.class);
                                         Pair[] pairs = new Pair[1];
 
                                         pairs[0] = new Pair<View,String>(findViewById(R.id.buttonLogin),"SIGN IN");
 
                                         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-                                            Toast.makeText(ELoginActivity.this, "Welcome"+ username.trim() +"to InPhoMeet", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(ELoginActivity.this, "Welcome user to InPhoMeet", Toast.LENGTH_SHORT).show();
                                             ActivityOptions options  = ActivityOptions.makeSceneTransitionAnimation(ELoginActivity.this,pairs);
                                             startActivity(intent,options.toBundle());
                                         }
                                         else{
-                                            Toast.makeText(ELoginActivity.this, "Welcome"+ username.trim() +"to InPhoMeet", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(ELoginActivity.this, "Welcome user to InPhoMeet", Toast.LENGTH_SHORT).show();
                                             startActivity(intent);
                                         }
 
@@ -100,10 +102,14 @@ public class ELoginActivity extends AppCompatActivity {
                                         Toast.makeText(ELoginActivity.this, "hey please enter correct data", Toast.LENGTH_SHORT).show();
                                     }
                                 }
+                                else {
+                                    Toast.makeText(ELoginActivity.this, "Number not exits in our records", Toast.LENGTH_SHORT).show();
+                                }
                             }
 
                             @Override
                             public void onCancelled(@NonNull DatabaseError error) {
+                                Toast.makeText(ELoginActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
 
                             }
                         });

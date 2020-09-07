@@ -31,11 +31,11 @@ public class activity_navigation_header extends AppCompatActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot ds : snapshot.getChildren()){
-                   UserInfo.setText(ds.child("FullName").getValue(String.class));
-                   isVerified.setText(ds.child("Username").getValue(String.class));
 
-                }
+                   UserInfo.setText(snapshot.child("FullName").getValue(String.class));
+                   isVerified.setText(snapshot.child("PhoneNumber").getValue(String.class));
+
+
             }
 
             @Override

@@ -61,8 +61,8 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:id="@+id/inputUsername"
-                android:hint="@string/enterusername"
+                android:id="@+id/inputPhoneNumber"
+                android:hint="@string/enter_number"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/autour_one"
                 android:inputType="text"

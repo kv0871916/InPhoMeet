@@ -23,8 +23,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.concurrent.TimeUnit;
 
@@ -121,94 +124,132 @@ public class NewUserActivity extends AppCompatActivity {
                 }
         });
         buttonOTPVerify.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final String fullName = inputFname.getText().toString();
-                final String username = inputnewUsername.getText().toString();
-                final String phoneNumber = inputMobile.getText().toString();
-                final String password = inputnewPassword.getText().toString();
-                if(male.isChecked()){
-                    gender="Male";
+                                               @Override
+                                               public void onClick(View view) {
+                                                   final String fullName = inputFname.getText().toString();
+                                                   final String username = inputnewUsername.getText().toString().toLowerCase();
+                                                   final String phoneNumber = inputMobile.getText().toString();
+                                                   final String password = inputnewPassword.getText().toString();
+                                                   if (male.isChecked()) {
+                                                       gender = "Male";
 
-                }
-                if(female.isChecked()){
-                    gender="Female";
+                                                   }
+                                                   if (female.isChecked()) {
+                                                       gender = "Female";
 
-                }
-                if(other.isChecked()){
-                    gender="Other's";
-                }
+                                                   }
+                                                   if (other.isChecked()) {
+                                                       gender = "Other's";
+                                                   }
 
-                if (inputFname.getText().toString().trim().isEmpty()
-                        || inputMobile.getText().toString().trim().isEmpty()
-                        || inputnewUsername.toString().trim().isEmpty()
-                        || inputnewPassword.toString().trim().isEmpty()
-                ) {
+                                                   if (inputFname.getText().toString().trim().isEmpty()
+                                                           || inputMobile.getText().toString().trim().isEmpty()
+                                                           || inputnewUsername.toString().trim().isEmpty()
+                                                           || inputnewPassword.toString().trim().isEmpty()
+                                                   ) {
 
-                    Toast.makeText(NewUserActivity.this, "Please Details Correctly", Toast.LENGTH_SHORT).show();
-                }if (inputnewPassword.length() < 6
-                        || inputnewPassword.length() > 12) {
-                    inputnewPassword.setError("Password should be more than 12 and less than 6 Characters");
-                }
+                                                       Toast.makeText(NewUserActivity.this, "Please Details Correctly", Toast.LENGTH_SHORT).show();
+                                                   }
+                                                   if (inputnewPassword.length() < 6
+                                                           || inputnewPassword.length() > 12) {
+                                                       inputnewPassword.setError("Password should be more than 12 and less than 6 Characters");
+                                                   }
 
-                if(inputCode1.getText().toString().trim().isEmpty()
-                        ||inputCode2.getText().toString().trim().isEmpty()
-                        ||inputCode3.getText().toString().trim().isEmpty()
-                        ||inputCode4.getText().toString().trim().isEmpty()
-                        ||inputCode5.getText().toString().trim().isEmpty()
-                        ||inputCode6.getText().toString().trim().isEmpty()){
-                    Toast.makeText(NewUserActivity.this, "Please enter valid code", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                String code = inputCode1.getText().toString()+
-                        inputCode2.getText().toString()+
-                        inputCode3.getText().toString()+
-                        inputCode4.getText().toString()+
-                        inputCode5.getText().toString()+
-                        inputCode6.getText().toString();
-                if(verificationId != null){
-                    progressBar.setVisibility(View.VISIBLE);
-                    buttonOTPVerify.setVisibility(View.INVISIBLE);
-                    PhoneAuthCredential phoneAuthCredential =PhoneAuthProvider.getCredential(
-                            verificationId,
-                            code
-                    );
-                    FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential)
-                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    progressBar.setVisibility(View.GONE);
-                                    buttonFLName.setVisibility(View.GONE);
-                                    buttonOTPVerify.setVisibility(View.VISIBLE);
-                                    if(task.isSuccessful()){
-                                        Users information = new Users(
+                                                   if (inputCode1.getText().toString().trim().isEmpty()
+                                                           || inputCode2.getText().toString().trim().isEmpty()
+                                                           || inputCode3.getText().toString().trim().isEmpty()
+                                                           || inputCode4.getText().toString().trim().isEmpty()
+                                                           || inputCode5.getText().toString().trim().isEmpty()
+                                                           || inputCode6.getText().toString().trim().isEmpty()) {
+                                                       Toast.makeText(NewUserActivity.this, "Please enter valid code", Toast.LENGTH_SHORT).show();
+                                                       return;
+                                                   }
+                                                   String code = inputCode1.getText().toString() +
+                                                           inputCode2.getText().toString() +
+                                                           inputCode3.getText().toString() +
+                                                           inputCode4.getText().toString() +
+                                                           inputCode5.getText().toString() +
+                                                           inputCode6.getText().toString();
+                                                   if (verificationId != null) {
+                                                       progressBar.setVisibility(View.VISIBLE);
+                                                       buttonOTPVerify.setVisibility(View.INVISIBLE);
+                                                       final PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.getCredential(
+                                                               verificationId,
+                                                               code
+                                                       );
 
-                                                fullName,
-                                                username,
-                                                phoneNumber,
-                                                gender,
-                                                password
-                                        );
-                                     FirebaseDatabase.getInstance().getReference("Users")
-                                       .child(username)
-                                       .setValue(information).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                         @Override
-                                         public void onComplete(@NonNull Task<Void> task) {
-                                             Toast.makeText(NewUserActivity.this, "User's have been Registered", Toast.LENGTH_SHORT).show();
-                                             Intent intent = new Intent(getApplicationContext(),IntroActivity.class);
-                                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                             startActivity(intent);
-                                         }
-                                     });
-                                    }
-                                    else{
-                                        Toast.makeText(NewUserActivity.this, "The verification code entered was invalid ", Toast.LENGTH_SHORT).show();
-                                    }
-                                }
-                            });
-                }
-            }
-        });
+                                                       FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential)
+                                                               .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                                                   @Override
+                                                                   public void onComplete(@NonNull Task<AuthResult> task) {
+                                                                       progressBar.setVisibility(View.GONE);
+                                                                       buttonFLName.setVisibility(View.GONE);
+                                                                       buttonOTPVerify.setVisibility(View.VISIBLE);
+                                                                       if (task.isSuccessful()) {
+                                                                           Users information = new Users(
+
+                                                                                   fullName,
+                                                                                   username,
+                                                                                   phoneNumber,
+                                                                                   gender,
+                                                                                   password
+                                                                           );
+                                                                           FirebaseDatabase.getInstance().getReference("Users")
+                                                                                   .child(phoneNumber)
+                                                                                   .setValue(information).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                               @Override
+                                                                               public void onComplete(@NonNull Task<Void> task) {
+                                                                                   Toast.makeText(NewUserActivity.this, "User's have been Registered", Toast.LENGTH_SHORT).show();
+                                                                                   Intent intent = new Intent(getApplicationContext(), IntroActivity.class);
+                                                                                   intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                                                   startActivity(intent);
+                                                                               }
+                                                                           });
+                                                                       } else {
+                                                                           Toast.makeText(NewUserActivity.this, "The verification code entered was invalid ", Toast.LENGTH_SHORT).show();
+                                                                       }
+                                                                   }
+                                                               });
+
+
+                                                       FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential)
+                                                               .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                                                   @Override
+                                                                   public void onComplete(@NonNull Task<AuthResult> task) {
+                                                                       progressBar.setVisibility(View.GONE);
+                                                                       buttonFLName.setVisibility(View.GONE);
+                                                                       buttonOTPVerify.setVisibility(View.VISIBLE);
+                                                                       if (task.isSuccessful()) {
+                                                                           Users information = new Users(
+
+                                                                                   fullName,
+                                                                                   username,
+                                                                                   phoneNumber,
+                                                                                   gender,
+                                                                                   password
+                                                                           );
+                                                                           FirebaseDatabase.getInstance().getReference("Users")
+                                                                                   .child(phoneNumber)
+                                                                                   .setValue(information).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                               @Override
+                                                                               public void onComplete(@NonNull Task<Void> task) {
+                                                                                   Toast.makeText(NewUserActivity.this, "User's have been Registered", Toast.LENGTH_SHORT).show();
+                                                                                   Intent intent = new Intent(getApplicationContext(), IntroActivity.class);
+                                                                                   intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                                                   startActivity(intent);
+                                                                               }
+                                                                           });
+                                                                       } else {
+                                                                           Toast.makeText(NewUserActivity.this, "The verification code entered was invalid ", Toast.LENGTH_SHORT).show();
+                                                                       }
+                                                                   }
+                                                               });
+
+                                                   }
+                                               }
+
+
+                                           });
         findViewById(R.id.textresendotp).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
