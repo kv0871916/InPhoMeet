@@ -46,7 +46,7 @@ public class MainLoginActivity extends AppCompatActivity {
         btnPhone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),NewUserActivity.class);
+                Intent intent = new Intent(getApplicationContext(),ELoginActivity.class);
                 startActivity(intent);
             }
         });
@@ -95,8 +95,6 @@ public class MainLoginActivity extends AppCompatActivity {
               
                 firebaseAuthWithGoogle(account.getIdToken());
             } catch (ApiException e) {
-                // Google Sign In failed, update UI appropriately
-                // ...
                 Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
@@ -109,7 +107,7 @@ public class MainLoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
+
                             Toast.makeText(MainLoginActivity.this, "Successfully logged in", Toast.LENGTH_SHORT).show();
                             FirebaseUser user = fAuth.getCurrentUser();
                             startActivity(new Intent(getApplicationContext(), IntroActivity.class));

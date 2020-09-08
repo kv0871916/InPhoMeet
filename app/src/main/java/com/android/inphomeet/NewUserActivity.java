@@ -51,7 +51,7 @@ public class NewUserActivity extends AppCompatActivity {
         final RadioButton male = findViewById(R.id.male);
         final RadioButton female = findViewById(R.id.female);
         final RadioButton other = findViewById(R.id.other);
-        final ProgressBar progressBar =findViewById(R.id.pro1);
+
         fAuth = FirebaseAuth.getInstance();
         verificationId = getIntent().getStringExtra("verificationId");
         inputCode1 = findViewById(R.id.inputCode1);
@@ -90,7 +90,7 @@ public class NewUserActivity extends AppCompatActivity {
                         || inputnewPassword.length() > 12) {
                     inputnewPassword.setError("Password should be more than 12 and less than 6 Characters");
                 }
-                progressBar.setVisibility(View.VISIBLE);
+
                 buttonFLName.setVisibility(View.INVISIBLE);
                 PhoneAuthProvider.getInstance().verifyPhoneNumber(
                         "+91" + inputMobile.getText().toString(),
@@ -100,13 +100,13 @@ public class NewUserActivity extends AppCompatActivity {
                         new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
                             @Override
                             public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-                                progressBar.setVisibility(View.GONE);
+
                                 buttonFLName.setVisibility(View.GONE);
                                 buttonOTPVerify.setVisibility(View.VISIBLE);
                             }
                             @Override
                             public void onVerificationFailed(@NonNull FirebaseException e) {
-                                progressBar.setVisibility(View.GONE);
+
                                 buttonFLName.setVisibility(View.GONE);
                                 buttonOTPVerify.setVisibility(View.VISIBLE);
                                 Toast.makeText(NewUserActivity.this,e.getMessage(),Toast.LENGTH_LONG).show();
@@ -115,7 +115,7 @@ public class NewUserActivity extends AppCompatActivity {
                             @Override
                             public void onCodeSent(@NonNull String newVerificationId, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
                                 verificationId =newVerificationId;
-                                progressBar.setVisibility(View.GONE);
+
                                 buttonFLName.setVisibility(View.GONE);
                                 buttonOTPVerify.setVisibility(View.VISIBLE);
                                 Toast.makeText(NewUserActivity.this, "OTP Sent", Toast.LENGTH_SHORT).show();
@@ -128,7 +128,7 @@ public class NewUserActivity extends AppCompatActivity {
                                                public void onClick(View view) {
                                                    final String fullName = inputFname.getText().toString();
                                                    final String username = inputnewUsername.getText().toString().toLowerCase();
-                                                   final String phoneNumber = inputMobile.getText().toString();
+                                                   final String phoneNumber = "+91"+inputMobile.getText().toString();
                                                    final String password = inputnewPassword.getText().toString();
                                                    if (male.isChecked()) {
                                                        gender = "Male";
@@ -171,7 +171,7 @@ public class NewUserActivity extends AppCompatActivity {
                                                            inputCode5.getText().toString() +
                                                            inputCode6.getText().toString();
                                                    if (verificationId != null) {
-                                                       progressBar.setVisibility(View.VISIBLE);
+
                                                        buttonOTPVerify.setVisibility(View.INVISIBLE);
                                                        final PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.getCredential(
                                                                verificationId,
@@ -182,7 +182,7 @@ public class NewUserActivity extends AppCompatActivity {
                                                                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                                                    @Override
                                                                    public void onComplete(@NonNull Task<AuthResult> task) {
-                                                                       progressBar.setVisibility(View.GONE);
+
                                                                        buttonFLName.setVisibility(View.GONE);
                                                                        buttonOTPVerify.setVisibility(View.VISIBLE);
                                                                        if (task.isSuccessful()) {
@@ -216,7 +216,7 @@ public class NewUserActivity extends AppCompatActivity {
                                                                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                                                    @Override
                                                                    public void onComplete(@NonNull Task<AuthResult> task) {
-                                                                       progressBar.setVisibility(View.GONE);
+
                                                                        buttonFLName.setVisibility(View.GONE);
                                                                        buttonOTPVerify.setVisibility(View.VISIBLE);
                                                                        if (task.isSuccessful()) {
@@ -239,12 +239,10 @@ public class NewUserActivity extends AppCompatActivity {
                                                                                    startActivity(intent);
                                                                                }
                                                                            });
-                                                                       } else {
-                                                                           Toast.makeText(NewUserActivity.this, "The verification code entered was invalid ", Toast.LENGTH_SHORT).show();
                                                                        }
+                                                                           Toast.makeText(NewUserActivity.this, "The verification code entered was invalid ", Toast.LENGTH_SHORT).show();
                                                                    }
                                                                });
-
                                                    }
                                                }
 
@@ -261,14 +259,14 @@ public class NewUserActivity extends AppCompatActivity {
                         new PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
                             @Override
                             public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-                                progressBar.setVisibility(View.GONE);
+
                                 buttonFLName.setVisibility(View.GONE);
                                 buttonOTPVerify.setVisibility(View.VISIBLE);
                             }
 
                             @Override
                             public void onVerificationFailed(@NonNull FirebaseException e) {
-                                progressBar.setVisibility(View.GONE);
+
                                 buttonFLName.setVisibility(View.GONE);
                                 buttonOTPVerify.setVisibility(View.VISIBLE);
                                 Toast.makeText(NewUserActivity.this,e.getMessage(),Toast.LENGTH_LONG).show();
@@ -277,7 +275,6 @@ public class NewUserActivity extends AppCompatActivity {
                             @Override
                             public void onCodeSent(@NonNull String newVerificationId, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
                                 verificationId =newVerificationId;
-                                progressBar.setVisibility(View.GONE);
                                 buttonFLName.setVisibility(View.GONE);
                                 buttonOTPVerify.setVisibility(View.VISIBLE);
                                 Toast.makeText(NewUserActivity.this, "OTP Sent", Toast.LENGTH_SHORT).show();

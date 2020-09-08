@@ -18,6 +18,7 @@
     <TextView
         android:id="@+id/textTitle"
         android:gravity="center"
+        android:fontFamily="@font/autour_one"
         android:textColor="@color/colorTextPrimary"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -26,6 +27,7 @@
     <TextView
         android:id="@+id/textDescription"
         android:gravity="center"
+        android:fontFamily="@font/autour_one"
         android:textColor="@color/colorTextSecondary"
         android:textSize="18sp"
         android:layout_width="match_parent"

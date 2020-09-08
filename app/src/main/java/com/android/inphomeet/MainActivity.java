@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     private void welcome(){
-            Intent intent = new Intent(this, NewUserActivity.class);
+            Intent intent = new Intent(this, MainLoginActivity.class);
             startActivity(intent);
     }
 }

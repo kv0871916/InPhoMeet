@@ -5,8 +5,8 @@
     android:background="@color/colorWhite"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:transitionName="@string/sign_in"
     tools:context=".IntroActivity"
+
     tools:targetApi="lollipop">
 
     <com.google.android.material.button.MaterialButton
@@ -16,6 +16,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginBottom="15dp"
         android:textSize="15sp"
+        android:fontFamily="@font/autour_one"
         android:textColor="@color/colorWhite"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
