@@ -15,11 +15,17 @@ import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.concurrent.TimeUnit;
 
 public class SendOTPActivity extends AppCompatActivity {
     FirebaseAuth fAuth;
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +41,7 @@ public class SendOTPActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), WelcomeActivity.class));
             finish();
         }
+        databaseReference = FirebaseDatabase.getInstance().getReference("Users").child("PhoneNumber");
         buttonOTPSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,40 +50,60 @@ public class SendOTPActivity extends AppCompatActivity {
                     return;
 
                 }
+                final String number = "+91" +inputMobile.getText().toString().trim();
                 progressBar.setVisibility(View.VISIBLE);
                 buttonOTPSend.setVisibility(View.INVISIBLE);
+                databaseReference.addValueEventListener(new ValueEventListener() {
 
-                PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                        "+91" +inputMobile.getText().toString(),
-                        60,
-                        TimeUnit.SECONDS,
-                        SendOTPActivity.this,
-                        new PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
-                            @Override
-                            public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-                                progressBar.setVisibility(View.GONE);
-                                buttonOTPSend.setVisibility(View.VISIBLE);
-                            }
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                            @Override
-                            public void onVerificationFailed(@NonNull FirebaseException e) {
-                                progressBar.setVisibility(View.GONE);
-                                buttonOTPSend.setVisibility(View.VISIBLE);
-                                Toast.makeText(SendOTPActivity.this,e.getMessage(),Toast.LENGTH_LONG).show();
-                            }
+                        String no = snapshot.getValue().toString().trim();
+                           if(no.equals(number)){
+                               PhoneAuthProvider.getInstance().verifyPhoneNumber(
+                                       "+91" +inputMobile.getText().toString(),
+                                       60,
+                                       TimeUnit.SECONDS,
+                                       SendOTPActivity.this,
+                                       new PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
+                                           @Override
+                                           public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+                                               progressBar.setVisibility(View.GONE);
+                                               buttonOTPSend.setVisibility(View.VISIBLE);
+                                           }
 
-                            @Override
-                            public void onCodeSent(@NonNull String verificationId, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-                                progressBar.setVisibility(View.GONE);
-                                buttonOTPSend.setVisibility(View.VISIBLE);
-                                Intent intent = new Intent(getApplicationContext(), VerifyOTPActivity.class);
-                                intent.putExtra("mobile", inputMobile.getText().toString());
-                                intent.putExtra("verificationId",verificationId);
-                                startActivity(intent);
-                            }
-                        }
-                );
+                                           @Override
+                                           public void onVerificationFailed(@NonNull FirebaseException e) {
+                                               progressBar.setVisibility(View.GONE);
+                                               buttonOTPSend.setVisibility(View.VISIBLE);
+                                               Toast.makeText(SendOTPActivity.this,e.getMessage(),Toast.LENGTH_LONG).show();
+                                           }
 
+                                           @Override
+                                           public void onCodeSent(@NonNull String verificationId, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                                               progressBar.setVisibility(View.GONE);
+                                               buttonOTPSend.setVisibility(View.VISIBLE);
+                                               Intent intent = new Intent(getApplicationContext(), VerifyOTPActivity.class);
+                                               intent.putExtra("mobile", inputMobile.getText().toString());
+                                               intent.putExtra("verificationId",verificationId);
+                                               startActivity(intent);
+                                           }
+                                       }
+                               );
+
+                           }
+                           else{
+                               Toast.makeText(SendOTPActivity.this, "+91"+inputMobile+" not registered ", Toast.LENGTH_SHORT).show();
+                               Intent intent= new Intent(SendOTPActivity.this,NewUserActivity.class);
+                               startActivity(intent);
+                           }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Toast.makeText(SendOTPActivity.this, "+91"+inputMobile+"not registered or "+ error.getMessage().trim(), Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
     }

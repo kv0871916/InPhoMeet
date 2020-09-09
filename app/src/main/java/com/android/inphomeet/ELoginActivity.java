@@ -42,7 +42,6 @@ public class ELoginActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), WelcomeActivity.class));
             finish();
         }
-        fAuth.getCurrentUser();
         databaseReference = FirebaseDatabase.getInstance().getReference("Users").child("PhoneNumber");
 
         CreateAccount.setOnClickListener(new View.OnClickListener() {

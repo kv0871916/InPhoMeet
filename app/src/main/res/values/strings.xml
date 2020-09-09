@@ -72,4 +72,10 @@
     <string name="enter_onetimepassword">Enter OneTimePassword</string>
     <string name="enterusername">Enter Username</string>
     <string name="enter_number">Enter Number</string>
+    <string name="disconnected">DISCONNECTED</string>
+    <string name="connected">Connected</string>
+    <string name="ooops">Ooops!</string>
+    <string name="no_internet_connection_found">No Internet Connection found</string>
+    <string name="on_your_data_and_hit_restart">ON YOUR DATA AND HIT RESTART</string>
+    <string name="restart">Restart</string>
 </resources>

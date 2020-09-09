@@ -65,7 +65,7 @@ public class NewUserActivity extends AppCompatActivity {
         loginhere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent =new Intent(NewUserActivity.this,ELoginActivity.class);
+                Intent intent =new Intent(NewUserActivity.this,SendOTPActivity.class);
                 startActivity(intent);
             }
         });
