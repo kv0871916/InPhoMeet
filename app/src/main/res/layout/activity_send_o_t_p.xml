@@ -126,6 +126,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="40dp"
+        android:id="@+id/CreateAccount"
         android:text="@string/already_have_an_account_login_here"
         android:textColor="@color/colorAccent"
         android:textSize="16sp"

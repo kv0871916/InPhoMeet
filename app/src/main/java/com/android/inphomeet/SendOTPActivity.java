@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.FirebaseException;
@@ -25,7 +26,7 @@ import java.util.concurrent.TimeUnit;
 
 public class SendOTPActivity extends AppCompatActivity {
     FirebaseAuth fAuth;
-    DatabaseReference databaseReference;
+  //  DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +35,21 @@ public class SendOTPActivity extends AppCompatActivity {
 
         final EditText inputMobile = findViewById(R.id.inputMobile);
         final Button buttonOTPSend = findViewById(R.id.buttonOTPSend);
-
+        final TextView createacc = findViewById(R.id.CreateAccount);
         final ProgressBar progressBar =findViewById(R.id.progressBar);
         fAuth = FirebaseAuth.getInstance();
         if(fAuth.getCurrentUser() != null) {
             startActivity(new Intent(getApplicationContext(), WelcomeActivity.class));
             finish();
         }
-        databaseReference = FirebaseDatabase.getInstance().getReference("Users").child("PhoneNumber");
+
+        createacc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), NewUserActivity.class));
+            }
+        });
+        //databaseReference = FirebaseDatabase.getInstance().getReference("Users").child("PhoneNumber");
         buttonOTPSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,13 +61,7 @@ public class SendOTPActivity extends AppCompatActivity {
                 final String number = "+91" +inputMobile.getText().toString().trim();
                 progressBar.setVisibility(View.VISIBLE);
                 buttonOTPSend.setVisibility(View.INVISIBLE);
-                databaseReference.addValueEventListener(new ValueEventListener() {
 
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                        String no = snapshot.getValue().toString().trim();
-                           if(no.equals(number)){
                                PhoneAuthProvider.getInstance().verifyPhoneNumber(
                                        "+91" +inputMobile.getText().toString(),
                                        60,
@@ -91,19 +93,8 @@ public class SendOTPActivity extends AppCompatActivity {
                                        }
                                );
 
-                           }
-                           else{
-                               Toast.makeText(SendOTPActivity.this, "+91"+inputMobile+" not registered ", Toast.LENGTH_SHORT).show();
-                               Intent intent= new Intent(SendOTPActivity.this,NewUserActivity.class);
-                               startActivity(intent);
-                           }
-                    }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        Toast.makeText(SendOTPActivity.this, "+91"+inputMobile+"not registered or "+ error.getMessage().trim(), Toast.LENGTH_SHORT).show();
-                    }
-                });
+
             }
         });
     }
