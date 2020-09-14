@@ -65,7 +65,7 @@ public class NewUserActivity extends AppCompatActivity {
         loginhere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent =new Intent(NewUserActivity.this,SendOTPActivity.class);
+                Intent intent =new Intent(NewUserActivity.this,ELoginActivity.class);
                 startActivity(intent);
             }
         });
@@ -126,10 +126,11 @@ public class NewUserActivity extends AppCompatActivity {
         buttonOTPVerify.setOnClickListener(new View.OnClickListener() {
                                                @Override
                                                public void onClick(View view) {
-                                                   final String fullName = inputFname.getText().toString();
+                                                   //final String uid = fAuth.getCurrentUser().getUid();
+                                                   final String fullName = inputFname.getText().toString().toLowerCase();
                                                    final String username = inputnewUsername.getText().toString().toLowerCase();
-                                                   final String phoneNumber = "+91"+inputMobile.getText().toString();
-                                                   final String password = inputnewPassword.getText().toString();
+                                                   final String phoneNumber = inputMobile.getText().toString();
+                                                   final String password = inputnewPassword.getText().toString().toLowerCase();
                                                    if (male.isChecked()) {
                                                        gender = "Male";
 
@@ -208,39 +209,6 @@ public class NewUserActivity extends AppCompatActivity {
                                                                        } else {
                                                                            Toast.makeText(NewUserActivity.this, "The verification code entered was invalid ", Toast.LENGTH_SHORT).show();
                                                                        }
-                                                                   }
-                                                               });
-
-
-                                                       FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential)
-                                                               .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                                                   @Override
-                                                                   public void onComplete(@NonNull Task<AuthResult> task) {
-
-                                                                       buttonFLName.setVisibility(View.GONE);
-                                                                       buttonOTPVerify.setVisibility(View.VISIBLE);
-                                                                       if (task.isSuccessful()) {
-                                                                           Users information = new Users(
-
-                                                                                   fullName,
-                                                                                   username,
-                                                                                   phoneNumber,
-                                                                                   gender,
-                                                                                   password
-                                                                           );
-                                                                           FirebaseDatabase.getInstance().getReference("Users")
-                                                                                   .child(phoneNumber)
-                                                                                   .setValue(information).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                                               @Override
-                                                                               public void onComplete(@NonNull Task<Void> task) {
-                                                                                   Toast.makeText(NewUserActivity.this, "User's have been Registered", Toast.LENGTH_SHORT).show();
-                                                                                   Intent intent = new Intent(getApplicationContext(), IntroActivity.class);
-                                                                                   intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                                                                   startActivity(intent);
-                                                                               }
-                                                                           });
-                                                                       }
-                                                                           Toast.makeText(NewUserActivity.this, "The verification code entered was invalid ", Toast.LENGTH_SHORT).show();
                                                                    }
                                                                });
                                                    }
