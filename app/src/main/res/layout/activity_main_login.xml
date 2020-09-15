@@ -18,7 +18,7 @@
             android:layout_height="200dp"
             android:layout_marginTop="60dp"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/white_crystal">
+            android:src="@drawable/colormainicon">
         </ImageView>
         <com.airbnb.lottie.LottieAnimationView
             android:layout_width="100dp"

@@ -10,11 +10,12 @@
     tools:context=".SplashActivity">
     <ImageView
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
+        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="400dp"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/white_crystal"/>
+        android:src="@drawable/colormainbg"/>
 
 
 <com.airbnb.lottie.LottieAnimationView
