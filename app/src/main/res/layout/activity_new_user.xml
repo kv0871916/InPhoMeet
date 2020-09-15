@@ -16,6 +16,7 @@
         <ImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:padding="5dp"
             android:layout_marginTop="20dp"
             android:contentDescription="@string/app_name"
             android:src="@drawable/paper">
@@ -24,6 +25,7 @@
         <TextView
             android:fontFamily="@font/autour_one"
             android:layout_width="wrap_content"
+            android:padding="5dp"
             android:layout_height="wrap_content"
             android:text="@string/new_account"
             android:textSize="22sp"
@@ -36,6 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginTop="8dp"
+            android:padding="5dp"
             android:layout_marginEnd="50dp"
             android:gravity="center"
             android:text="@string/kindly_enter_your_details"
@@ -56,6 +59,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:background="@null"
+                android:padding="5dp"
                 android:id="@+id/inputFname"
                 android:hint="@string/full_name"
                 android:layout_height="wrap_content"
@@ -66,12 +70,12 @@
                 android:textColor="@color/colorTextPrimary"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:drawableTint="@color/colorTextPrimary"
-                android:drawableLeft="@drawable/ic_username"
+                android:drawableTint="@color/colorAccent"
+                android:drawableLeft="@drawable/ic_name_people"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                android:drawableStart="@drawable/ic_username"
+                android:drawableStart="@drawable/ic_name_people"
                 tools:targetApi="m"
-                app:boxStrokeColor="@color/colorTextPrimary"
+                app:boxStrokeColor="@color/colorAccent"
                 app:boxStrokeWidthFocused="2dp"
                 android:drawablePadding="10dp"
                 app:endIconMode="clear_text">
@@ -80,6 +84,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:background="@null"
+                android:padding="5dp"
                 android:id="@+id/inputMobile"
                 android:hint="@string/enter_number"
                 android:fontFamily="@font/autour_one"
@@ -90,12 +95,12 @@
                 android:textColor="@color/colorTextPrimary"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:drawableTint="@color/colorTextPrimary"
-                android:drawableLeft="@drawable/ic_contacts"
+                android:drawableTint="@color/colorAccent"
+                android:drawableLeft="@drawable/ic_contact_phone_white"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                android:drawableStart="@drawable/ic_contacts"
+                android:drawableStart="@drawable/ic_contact_phone_white"
                 tools:targetApi="m"
-                app:boxStrokeColor="@color/colorTextPrimary"
+                app:boxStrokeColor="@color/colorAccent"
                 app:boxStrokeWidthFocused="2dp"
                 android:drawablePadding="10dp"
                 app:endIconMode="clear_text">
@@ -106,6 +111,7 @@
                 android:background="@null"
                 android:id="@+id/inputnewUsername"
                 android:hint="@string/enterusername"
+                android:padding="5dp"
                 android:layout_height="wrap_content"
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
@@ -114,12 +120,12 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:fontFamily="@font/autour_one"
-                android:drawableTint="@color/colorTextPrimary"
+                android:drawableTint="@color/colorAccent"
                 android:drawableLeft="@drawable/ic_white_account_circle"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:drawableStart="@drawable/ic_white_account_circle"
                 tools:targetApi="m"
-                app:boxStrokeColor="@color/colorTextPrimary"
+                app:boxStrokeColor="@color/colorAccent"
                 app:boxStrokeWidthFocused="2dp"
                 android:drawablePadding="10dp"
                 app:endIconMode="clear_text">
@@ -128,6 +134,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:background="@null"
+                android:padding="5dp"
                 android:id="@+id/inputnewPassword"
                 android:hint="@string/prompt_password"
                 android:layout_height="wrap_content"
@@ -138,12 +145,12 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:fontFamily="@font/autour_one"
-                android:drawableTint="@color/colorTextPrimary"
+                android:drawableTint="@color/colorAccent"
                 android:drawableLeft="@drawable/ic_password_lock"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:drawableStart="@drawable/ic_password_lock"
                 tools:targetApi="m"
-                app:boxStrokeColor="@color/colorTextPrimary"
+                app:boxStrokeColor="@color/colorAccent"
                 app:boxStrokeWidthFocused="2dp"
                 android:drawablePadding="10dp"
                 app:endIconMode="password_toggle">
@@ -153,6 +160,7 @@
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="5dp"
                 android:orientation="horizontal">
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -163,6 +171,7 @@
                     android:paddingEnd="10dp"
                     android:text="@string/male"
                     android:textSize="16sp"
+                    android:textColor="@color/red"
                     tools:ignore="RtlSymmetry" />
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -172,6 +181,7 @@
                     android:id="@+id/female"
                     android:text="@string/female"
                     android:textSize="16sp"
+                    android:textColor="@color/red"
                     android:fontFamily="@font/autour_one"
                     tools:ignore="RtlSymmetry" />
                 <RadioButton
@@ -183,6 +193,7 @@
                     android:fontFamily="@font/autour_one"
                     android:text="@string/other_s"
                     android:textSize="16sp"
+                    android:textColor="@color/red"
                     tools:ignore="RtlSymmetry" />
             </RadioGroup>
     </LinearLayout>
@@ -201,7 +212,7 @@
                 android:importantForAutofill="no"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/colorTextPrimary"
+                android:textColor="@color/colorAccent"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 tools:ignore="LabelFor">
@@ -215,7 +226,7 @@
                 android:importantForAutofill="no"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/colorTextPrimary"
+                android:textColor="@color/red"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 tools:ignore="LabelFor">
@@ -229,7 +240,7 @@
                 android:importantForAutofill="no"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/colorTextPrimary"
+                android:textColor="@color/colorAccent"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 tools:ignore="LabelFor">
@@ -243,7 +254,7 @@
                 android:importantForAutofill="no"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/colorTextPrimary"
+                android:textColor="@color/colorAccent"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 tools:ignore="LabelFor">
@@ -257,7 +268,7 @@
                 android:importantForAutofill="no"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/colorTextPrimary"
+                android:textColor="@color/colorAccent"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 tools:ignore="LabelFor">
@@ -271,7 +282,7 @@
                 android:importantForAutofill="no"
                 android:inputType="number"
                 android:maxLength="1"
-                android:textColor="@color/colorTextPrimary"
+                android:textColor="@color/colorAccent"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 tools:ignore="LabelFor">
@@ -286,6 +297,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/autour_one"
+                android:padding="5dp"
                 android:text="@string/didn_t_receive_the_otp"
                 android:textSize="14sp">
             </TextView>
@@ -299,6 +311,7 @@
                 android:layout_marginLeft="8dp"
                 android:textSize="16sp"
                 android:textStyle="bold"
+                android:padding="5dp"
                 android:layout_marginStart="8dp">
             </TextView>
         </LinearLayout>
@@ -311,6 +324,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/autour_one"
                 android:layout_margin="10dp"
+                android:padding="5dp"
                 android:background="@drawable/background_button"
                 android:textStyle="bold"
                 android:textSize="16sp"
@@ -322,6 +336,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="30dp"
+                android:padding="5dp"
                 android:background="@drawable/background_button"
                 android:textStyle="bold"
                 android:textSize="16sp"
@@ -336,18 +351,19 @@
                 android:layout_height="40dp"
                 android:id="@+id/progressBar"
                 android:layout_gravity="center"
+                android:padding="5dp"
                 android:visibility="gone">
             </ProgressBar>
         </FrameLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:padding="5dp"
             android:gravity="center"
             android:fontFamily="@font/autour_one"
             android:id="@+id/loginhere"
             android:text="@string/already_have_an_account_login_here"
-            android:textColor="@color/colorTextPrimary"
+            android:textColor="@color/colorPrimary"
             android:textSize="14sp">
         </TextView>
 
