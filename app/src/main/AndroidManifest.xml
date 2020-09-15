@@ -13,7 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
-        <activity android:name=".user.NavigationheaderActivity"></activity>
+        <activity android:name=".NavigationheaderActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
         <activity
             android:name=".MainChatsActivity"
             android:screenOrientation="portrait"

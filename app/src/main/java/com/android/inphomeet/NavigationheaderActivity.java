@@ -1,4 +1,4 @@
-package com.android.inphomeet.user;
+package com.android.inphomeet;
 
 import androidx.appcompat.app.AppCompatActivity;
 

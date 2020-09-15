@@ -1,4 +1,4 @@
-package com.android.inphomeet.database;
+package com.android.inphomeet;
 
 public class Users {
     public String FullName,Username,PhoneNumber,Gender,Password;
