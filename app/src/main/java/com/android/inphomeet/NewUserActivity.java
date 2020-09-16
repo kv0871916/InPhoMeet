@@ -65,7 +65,7 @@ public class NewUserActivity extends AppCompatActivity {
             }
         });
         if(fAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), WelcomeActivity.class));
+            startActivity(new Intent(getApplicationContext(), MainChatsActivity.class));
             finish();
         }
 
@@ -195,7 +195,7 @@ public class NewUserActivity extends AppCompatActivity {
                                                                                @Override
                                                                                public void onComplete(@NonNull Task<Void> task) {
                                                                                    Toast.makeText(NewUserActivity.this, "User's have been Registered \n Now Login with your account", Toast.LENGTH_SHORT).show();
-                                                                                   Intent intent = new Intent(getApplicationContext(), ELoginActivity.class);
+                                                                                   Intent intent = new Intent(getApplicationContext(), MainChatsActivity.class);
                                                                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                                                                    startActivity(intent);
                                                                                }
