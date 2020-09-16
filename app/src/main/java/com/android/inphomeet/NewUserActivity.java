@@ -173,7 +173,6 @@ public class NewUserActivity extends AppCompatActivity {
                                                                verificationId,
                                                                code
                                                        );
-
                                                        FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential)
                                                                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                                                    @Override
