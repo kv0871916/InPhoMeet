@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "711673672817-0duqtfke33ogc7v7qpbc3iq19s30o1js.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.inphomeet",
+            "certificate_hash": "2c61888a09c9fce4041a03c1117a40718ee5dc2e"
+          }
+        },
+        {
           "client_id": "711673672817-4a478i68c5srarohjkd32v0ctg3dmk59.apps.googleusercontent.com",
           "client_type": 3
         }

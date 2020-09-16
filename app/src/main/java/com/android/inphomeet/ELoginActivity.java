@@ -52,9 +52,7 @@ public class ELoginActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), WelcomeActivity.class));
             finish();
         }
-
         databaseReference = FirebaseDatabase.getInstance().getReference("Users");
-
         CreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -83,11 +81,19 @@ public class ELoginActivity extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             if(snapshot.exists()){
                                 String getpass = snapshot.child("Password").getValue(String.class);
+                                String getusername = snapshot.child("Username").getValue(String.class);
                                 if(pass.equals(getpass)){
+                                    Toast.makeText( ELoginActivity.this,"Welcome User "+getusername+" to InPho-Meet ", Toast.LENGTH_SHORT).show();
+                                    //store data
+                                    String _pass = snapshot.child("Password").getValue(String.class);
+                                    String _user = snapshot.child("Username").getValue(String.class);
+                                    String _name = snapshot.child("FullName").getValue(String.class);
+                                    String _number = snapshot.child("PhoneNumber").getValue(String.class);
+                                    String _gender = snapshot.child("Gender").getValue(String.class);
 
                                     Intent intent =new Intent(ELoginActivity.this,IntroActivity.class);
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                     startActivity(intent);
-                                    finish();
                                 }
                                 else {
                                     Toast.makeText(ELoginActivity.this, " Your entered password is wrong ", Toast.LENGTH_LONG).show();

@@ -29,7 +29,6 @@ import java.util.concurrent.TimeUnit;
 
 public class NewUserActivity extends AppCompatActivity {
     FirebaseAuth fAuth;
-    FirebaseDatabase firebaseDatabase;
     String verificationId;
     DatabaseReference databaseReference;
     String gender="";
@@ -196,8 +195,8 @@ public class NewUserActivity extends AppCompatActivity {
                                                                                    .setValue(information).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                                                @Override
                                                                                public void onComplete(@NonNull Task<Void> task) {
-                                                                                   Toast.makeText(NewUserActivity.this, "User's have been Registered", Toast.LENGTH_SHORT).show();
-                                                                                   Intent intent = new Intent(getApplicationContext(), IntroActivity.class);
+                                                                                   Toast.makeText(NewUserActivity.this, "User's have been Registered \n Now Login with your account", Toast.LENGTH_SHORT).show();
+                                                                                   Intent intent = new Intent(getApplicationContext(), ELoginActivity.class);
                                                                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                                                                    startActivity(intent);
                                                                                }
