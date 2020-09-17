@@ -14,29 +14,29 @@ import java.util.HashMap;
 
 public class SplashActivity extends AppCompatActivity {
     private Handler handler = new Handler();
-//    FirebaseAuth fAuth;
-    SessionManger sessionManger =new SessionManger(this);
-    HashMap<String,String> usersDetails =  sessionManger.getUsersDetailsFromSession();
-    String Number = usersDetails.get(SessionManger.KEY_PHONENUMBER);
+    FirebaseAuth fAuth;
+//    SessionManger sessionManger =new SessionManger(this);
+//    HashMap<String,String> usersDetails =  sessionManger.getUsersDetailsFromSession();
+//    String Number = usersDetails.get(SessionManger.KEY_PHONENUMBER);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-//        fAuth = FirebaseAuth.getInstance();
+        fAuth = FirebaseAuth.getInstance();
 
     }
     private Runnable runnable =new Runnable() {
         @Override
         public void run() {
             if(!isFinishing()){
-//                if(fAuth.getCurrentUser() != null) {
-//                    startActivity(new Intent(getApplicationContext(), WelcomeActivity.class));
-//                    finish();
-//                }
-                if(Number != null){
-                    startActivity(new Intent(getApplicationContext(), MainChatsActivity.class));
+                if(fAuth.getCurrentUser() != null) {
+                    startActivity(new Intent(getApplicationContext(), WelcomeActivity.class));
+                    finish();
                 }
+//                if(Number != null){
+//                    startActivity(new Intent(getApplicationContext(), MainChatsActivity.class));
+//                }
                 else {
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                 }
