@@ -48,10 +48,10 @@ public class ELoginActivity extends AppCompatActivity {
         final EditText inputPassword = findViewById(R.id.inputPassword );
         final Button buttonLogin = findViewById(R.id.buttonLogin);
 
-        if(fAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), WelcomeActivity.class));
-            finish();
-        }
+//        if(fAuth.getCurrentUser() != null) {
+//            startActivity(new Intent(getApplicationContext(), WelcomeActivity.class));
+//            finish();
+//        }
         databaseReference = FirebaseDatabase.getInstance().getReference("Users");
         CreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,9 +90,14 @@ public class ELoginActivity extends AppCompatActivity {
                                     String _name = snapshot.child("FullName").getValue(String.class);
                                     String _number = snapshot.child("PhoneNumber").getValue(String.class);
                                     String _gender = snapshot.child("Gender").getValue(String.class);
+                                    //create shared preference
+                                    SessionManger sessionManger = new SessionManger(ELoginActivity.this);
+                                    sessionManger.createLoginSession(_name,_user,_gender,_number,_pass);
 
-                                    Intent intent =new Intent(ELoginActivity.this,IntroActivity.class);
-                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                   // startActivity(new Intent(getApplicationContext(),NavigationheaderActivity.class));
+
+                                    Intent intent =new Intent(getApplicationContext(),IntroActivity.class);
+                                   // intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                     startActivity(intent);
                                 }
                                 else {
