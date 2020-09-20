@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,15 +30,23 @@ public class MainChatsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mainchats);
 
 
-        NavigationView navigationView =findViewById(R.id.navigationView);
+        final NavigationView navigationView =findViewById(R.id.navigationView);
         navigationView.setItemIconTintList(null);
         NavController navController = Navigation.findNavController(this,R.id.navHostFragment);
         NavigationUI.setupWithNavController(navigationView, navController);
         final TextView textTitle = findViewById(R.id.textTitle);
+        final ImageView imageView = findViewById(R.id.imageMenu);
         navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
             @Override
             public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
                 textTitle.setText(destination.getLabel());
+                imageView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        navigationView.showContextMenu();
+
+                    }
+                });
             }
         });
     }

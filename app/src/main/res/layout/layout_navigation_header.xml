@@ -24,8 +24,9 @@
         android:layout_height="1dp">
     </View>
     <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:padding="2dp"
         android:id="@+id/UserInfo"
         android:textColor="@color/colorTextPrimary"
         android:textSize="18sp"
@@ -34,8 +35,8 @@
         app:layout_constraintStart_toEndOf="@id/ProfilePhoto">
     </TextView>
     <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
         android:layout_marginStart="10dp"
         android:id="@+id/isVerified"
         android:layout_marginLeft="10dp"

@@ -16,12 +16,12 @@
         tools:layout="@layout/fragment_contacts" />
     <fragment
         android:id="@+id/menuGroup"
-        android:name="com.android.inphomeet.NewGroupFragment"
+        android:name="com.android.inphomeet.main.activity.NewGroupFragment"
         android:label="NewGroup"
         tools:layout="@layout/fragment_new_group" />
     <fragment
         android:id="@+id/menuSettings"
-        android:name="com.android.inphomeet.SettingsFragment"
+        android:name="com.android.inphomeet.main.activity.SettingsFragment"
         android:label="Settings"
         tools:layout="@layout/fragment_settings" />
     <fragment

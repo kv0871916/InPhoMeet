@@ -1,4 +1,4 @@
-package com.android.inphomeet;
+package com.android.inphomeet.main.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.android.inphomeet.MainLoginActivity;
+import com.android.inphomeet.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class SettingsFragment extends Fragment {
@@ -33,7 +35,7 @@ public class SettingsFragment extends Fragment {
 
     private void logout() {
         FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(getActivity(),MainLoginActivity.class));
+        startActivity(new Intent(getActivity(), MainLoginActivity.class));
         Toast.makeText(getActivity(), "User is logged out", Toast.LENGTH_SHORT).show();
     }
 }

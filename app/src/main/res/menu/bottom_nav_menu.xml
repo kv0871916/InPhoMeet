@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/menuHome"
+        android:icon="@drawable/ic_home_chat"
+        android:title="Dashboard"
+        app:cnb_backgroundColor="@color/colorAccent">
+
+    </item>
+    <item android:id="@+id/menuGroup"
+        android:icon="@drawable/ic_group"
+        android:title="@string/new_group"
+        app:cnb_backgroundColor="#E4CA44">
+    </item>
+
+    <item android:id="@+id/menuSettings"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/settings"
+        app:cnb_backgroundColor="@color/colorPrimaryDark">
+    </item>
+</menu>
