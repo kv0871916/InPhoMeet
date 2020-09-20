@@ -19,7 +19,7 @@ public class NavigationheaderActivity extends AppCompatActivity {
         setContentView(R.layout.layout_navigation_header);
         TextView number = findViewById(R.id.UserInfo);
         TextView username = findViewById(R.id.isVerified);
-        SessionManger sessionManger = new SessionManger(this);
+        SessionManger sessionManger = new SessionManger(NavigationheaderActivity.this, SessionManger.SESSION_USERSESSION);
         HashMap<String,String> usersDetails =  sessionManger.getUsersDetailsFromSession();
         //String FullName = usersData.get(SessionManger.)
         String Number = usersDetails.get(SessionManger.KEY_PHONENUMBER);
