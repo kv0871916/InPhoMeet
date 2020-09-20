@@ -3,16 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main.activity.SettingsFragment">
+    android:background="@color/colorPrimaryDark"
+    android:id="@+id/buttom_nav_setting"
+    tools:context=".main.SettingsFragment">
 
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="@string/settings"
         android:id="@+id/textSettings"
-        android:layout_gravity="center"
-        android:textSize="20sp"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/colorWhite"
+        android:gravity="center"
+        android:textSize="50sp"/>
 
     <Button
         android:id="@+id/logout"
@@ -21,12 +24,11 @@
         android:layout_marginTop="400dp"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:background="@drawable/mainbg"
+        android:background="@color/colorAccent"
         android:text="@string/logout"
         android:textColor="@color/colorWhite"
         android:textSize="16sp"
         android:textStyle="bold">
-
     </Button>
 
 </FrameLayout>

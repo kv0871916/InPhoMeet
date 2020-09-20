@@ -15,8 +15,8 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
     <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:contentDescription="@string/app_name"
         android:src="@drawable/paper">
 
@@ -27,7 +27,7 @@
         android:text="@string/login_in"
         android:textSize="30sp"
         android:fontFamily="@font/autour_one"
-        android:textColor="@color/colorTextPrimary"
+        android:textColor="@color/colorPrimary"
         android:textStyle="bold">
     </TextView>
 
@@ -41,7 +41,7 @@
         android:layout_marginBottom="10dp"
         android:gravity="center"
         android:text="@string/kindly_enter_your_details"
-        android:textColor="@color/colorTextSecondary"
+        android:textColor="@color/red"
         android:textSize="14sp">
 
     </TextView>
@@ -67,10 +67,11 @@
                 android:padding="10dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/autour_one"
-                android:inputType="text"
-                android:textColorHint="@color/colorTextSecondary"
+                android:inputType="number"
+                android:textColorHint="@color/colorPrimaryDark"
                 android:textSize="16sp"
                 android:textStyle="bold"
+                android:textColor="@color/red"
                 android:drawableTint="@color/colorAccent"
                 android:drawableLeft="@drawable/ic_white_account_circle"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -88,12 +89,13 @@
                 android:id="@+id/inputPassword"
                 android:hint="@string/password"
                 android:padding="10dp"
+                android:textColor="@color/red"
                 android:fontFamily="@font/autour_one"
                 android:layout_height="wrap_content"
                 android:imeOptions="actionDone"
                 android:importantForAutofill="no"
                 android:inputType="textPassword"
-                android:textColorHint="@color/colorTextSecondary"
+                android:textColorHint="@color/colorPrimaryDark"
                 android:textSize="16sp"
                 app:boxStrokeColor="@color/colorAccent"
                 app:boxStrokeWidthFocused="2dp"
@@ -106,9 +108,44 @@
                 tools:targetApi="m">
 
             </com.google.android.material.textfield.TextInputEditText>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+               <com.google.android.material.checkbox.MaterialCheckBox
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:textColor="@color/red"
+                android:text="@string/remember_me"
+                android:textSize="12sp"
+                android:id="@+id/remember_me"
+                android:fontFamily="@font/autour_one"
+                android:layout_gravity="left"
+                tools:ignore="RtlHardcoded">
+               </com.google.android.material.checkbox.MaterialCheckBox>
+              <com.google.android.material.textview.MaterialTextView
+               android:layout_width="match_parent"
+               android:layout_height="50dp"
+               android:text="@string/forget_password"
+               android:textAlignment="center"
+               android:textSize="12sp"
+               android:textColor="@color/red"
+               android:gravity="center"
+               android:layout_gravity="right"
+               android:id="@+id/forget_password"
+               android:fontFamily="@font/autour_one"
+               android:textAllCaps="true"
+               tools:ignore="RtlHardcoded">
+
+              </com.google.android.material.textview.MaterialTextView>
+
+            </LinearLayout>
 
         </LinearLayout>
+
     </LinearLayout>
+
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -123,6 +160,7 @@
             android:textSize="16sp"
             android:text="@string/sign_in"
             android:id="@+id/buttonLogin"
+            android:elevation="8dp"
             android:textColor="@color/colorWhite"
             tools:ignore="UnusedAttribute">
         </Button>
@@ -145,7 +183,7 @@
         android:gravity="center"
         android:fontFamily="@font/autour_one"
         android:text="@string/don_t_have_an_account"
-        android:textColor="@color/colorTextSecondary"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="14sp">
     </TextView>
         <TextView

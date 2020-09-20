@@ -1,4 +1,4 @@
-package com.android.inphomeet.main.activity;
+package com.android.inphomeet.main;
 
 import android.content.Intent;
 import android.os.Bundle;

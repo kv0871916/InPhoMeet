@@ -7,12 +7,15 @@
     android:background="@color/colorWhite"
     tools:context=".MainActivity"
     android:orientation="vertical">
-
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_height="match_parent">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
+        android:layout_alignParentTop="true"
         android:fontFamily="@font/autour_one"
         android:text="@string/app_name"
         android:textAlignment="center"
@@ -26,7 +29,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="100dp"
+        android:layout_alignParentTop="true"
         android:text="@string/it_s_safe_amp_secure"
         android:textAlignment="center"
         app:fontFamily="@font/alfa_slab_one"
@@ -36,32 +40,29 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="410dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
-        android:src="@drawable/colormainicon"
+        android:src="@drawable/banner"
+        android:layout_marginTop="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_margin="30dp"
         android:contentDescription="@string/app_name"
-        tools:ignore="MissingConstraints" />
+        />
 
     <Button
         android:id="@+id/Explore"
         android:layout_width="match_parent"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
         android:fontFamily="@font/autour_one"
         android:shadowColor="@color/colorAccent"
+        android:elevation="8dp"
         android:text="@string/start_exploring"
         android:textColor="@color/colorWhite"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/background_button"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        android:layout_alignParentBottom="true"
+        android:layout_margin="30dp"
+        android:background="@color/colorAccent" />
+</RelativeLayout>
+
 
 </LinearLayout>

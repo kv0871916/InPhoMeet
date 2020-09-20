@@ -3,13 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main.activity.NewGroupFragment">
+     android:background="#E4CA44"
+    android:id="@+id/bottom_nav_newgrp"
+    tools:context=".main.NewGroupFragment">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="@string/new_group"
-        android:layout_gravity="center"
-        android:textSize="20sp"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/colorWhite"
+        android:gravity="center"
+        android:textSize="50sp"
+        />
 
 </FrameLayout>

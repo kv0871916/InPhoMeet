@@ -7,6 +7,6 @@
         />
     <corners android:radius="10dp">
     </corners>
-    <solid android:color="@color/colorOnboardingIndicatorInactive">
+    <solid android:color="@color/colorWhite">
     </solid>
 </shape>

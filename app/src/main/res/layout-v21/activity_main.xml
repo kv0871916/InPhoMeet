@@ -7,61 +7,62 @@
     android:background="@color/colorWhite"
     tools:context=".MainActivity"
     android:orientation="vertical">
-
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:fontFamily="sans-serif-black"
-        android:text="@string/app_name"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textColor="@color/colorTextPrimary"
-        android:textSize="30sp"
-        app:fontFamily="@font/alfa_slab_one"
-        tools:ignore="MissingConstraints" />
+        android:padding="10dp"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_alignParentTop="true"
+            android:fontFamily="@font/autour_one"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="30sp"
+            app:fontFamily="@font/alfa_slab_one"
+            tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="30dp"
-        android:text="It's Safe &amp; Secure"
-        android:textAlignment="center"
-        app:fontFamily="@font/alfa_slab_one"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="121dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="100dp"
+            android:layout_alignParentTop="true"
+            android:text="@string/it_s_safe_amp_secure"
+            android:textAlignment="center"
+            app:fontFamily="@font/alfa_slab_one"
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="420dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:src="@drawable/colormainicon"
-        tools:ignore="MissingConstraints" />
+            />
 
-    <Button
-        android:id="@+id/Explore"
-        android:layout_width="match_parent"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
-        app:fontFamily="@font/alfa_slab_one"
-        android:shadowColor="@color/colorAccent"
-        android:text="@string/start_exploring"
-        android:textColor="@color/colorWhite"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/background_button"
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/banner"
+            android:layout_marginTop="150dp"
+            android:layout_alignParentTop="true"
+            android:layout_margin="30dp"
+            android:contentDescription="@string/app_name"
+            />
 
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        <Button
+            android:id="@+id/Explore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/autour_one"
+            android:shadowColor="@color/colorAccent"
+            android:elevation="8dp"
+            android:text="@string/start_exploring"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="30dp"
+            android:background="@color/colorAccent" />
+    </RelativeLayout>
+
 
 </LinearLayout>

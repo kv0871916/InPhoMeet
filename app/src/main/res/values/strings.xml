@@ -78,4 +78,7 @@
     <string name="no_internet_connection_found">No Internet Connection found</string>
     <string name="on_your_data_and_hit_restart">ON YOUR DATA AND HIT RESTART</string>
     <string name="restart">Restart</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forget_password">Forget Password</string>
 </resources>

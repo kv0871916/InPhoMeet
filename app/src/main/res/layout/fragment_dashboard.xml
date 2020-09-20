@@ -3,14 +3,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main.activity.DashboardFragment"
+    tools:context=".main.DashboardFragment"
+    android:id="@+id/bottom_nav_dashboard"
     android:background="@color/colorAccent">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Dashboard"
         android:textColor="@color/colorWhite"
-        android:textSize="50dp"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:textSize="50sp"
+        android:id="@+id/text"
+        android:text="@string/dashboard"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/colorWhite"
+        android:id="@+id/Welcometext"
+        android:textSize="20sp"
+        android:layout_marginTop="100dp"
+        android:padding="50dp"
+        android:text="@string/welcome"
+
+        />
 
 </FrameLayout>

@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.android.inphomeet.main.MainDashboardActivity;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -58,7 +59,7 @@ public class IntroActivity extends AppCompatActivity {
                     if(onboardingViewPager.getCurrentItem() + 1 < onboardingAdapter.getItemCount()){
                         onboardingViewPager.setCurrentItem(onboardingViewPager.getCurrentItem() + 1);
                     }else {
-                        startActivity(new Intent(getApplicationContext(),MainChatsActivity.class));
+                        startActivity(new Intent(getApplicationContext(), MainDashboardActivity.class));
                         finish();
                     }
                 }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/ic_launcher_background"
+    android:background="#BFE8DC"
     tools:context=".main.MainDashboardActivity"
     android:id="@+id/fragment_container">
 <com.ismaeldivita.chipnavigation.ChipNavigationBar
